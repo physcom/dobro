@@ -1,0 +1,130 @@
+title = "Category Post"
+url = "/category-posts/:category-id"
+layout = "default"
+==
+<?php
+   use Elaman\Dobro\Models\Post;
+   use Elaman\Dobro\Models\PostCategory;
+       
+   function onStart(){
+       $this['posts'] = Post::where('post_category_id','=',$this->param('category-id'))->orderBy('created_at', 'desc')->paginate(2);
+       $this['categories'] = PostCategory::get();
+       $this['category'] = PostCategory::where('id','=',$this->param('category-id'))->first();
+   }
+
+?>
+==
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 breadcrumbf">
+            <a href="/dobro">Главная</a> <span class="diviver">&gt;</span>  <a href="#">{{category.title}}</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-8">
+            {% for post in posts %}
+                <!-- POST -->
+                <div class="post">
+                    <div class="wrap-ut pull-left">
+                        <div class="userinfo pull-left">
+                           
+                            <div class="icons">
+                                <h4>{{post.author}}</h4>
+                            </div>
+                        </div>
+                        <div class="posttext pull-right">
+                            <h2>
+                                <a href="/dobro/post/{{post.id}}">{{post.title}}</a>
+                            </h2>
+                            <p>{{post.content|raw}}</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="postinfo pull-left">
+                        <div class="comments">
+                            <div class="commentbg">
+                                {{post.getCommentCount}}
+                                <div class="mark"></div>
+                            </div>
+
+                        </div>
+                        <div class="views"><i class="fa fa-eye"></i> {{post.view_count}}</div>
+                        <div class="time"><i class="fa fa-clock-o"></i> Опубликовано : {{post.created_at|date("d.m.Y H:m")}}</div>                                    
+                    </div>
+                    <div class="postinfobot">
+
+                        <div class="likeblock pull-left">
+                            <a href="#" class="up"><i class="fa fa-thumbs-o-up"></i>{{post.upvote_count}}</a>
+                        
+                        </div>
+                        <div class="posted pull-left"><i class="fa fa-map-marker"></i> {{post.getCategoryTitle}}</div>
+
+                        <div class="next pull-right">                                        
+                            <a href="#" class="sharer" data-sharer="facebook" data-url="http://localhost/dobro/post/{{post.id}}"> 
+                                <i class="fa fa-facebook-square " ></i>
+                            </a>
+                            <a href="#" class="sharer" data-sharer="whatsapp" data-url="http://localhost/dobro/post/{{post.id}}"> 
+                                <i class="fa fa-whatsapp" ></i>
+                            </a>
+                        </div>
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div><!-- POST -->
+            {% else %}
+                   <!-- POST -->
+                    <div class="post">
+                        <div class="wrap-ut pull-left">
+                            <div class="userinfo pull-left">
+                                <div class="avatar">
+                                    <div class="status green">&nbsp;</div>
+                                </div>
+
+                                <div class="icons">
+                                    <img src="images/icon1.jpg" alt="" /><img src="images/icon4.jpg" alt="" />
+                                </div>
+                            </div>
+                            <div class="posttext pull-left">
+                                <h2><a href="02_topic.html">10 Kids Unaware of Their Halloween Costume</a></h2>
+                                <p>It's one thing to subject yourself to a Halloween costume mishap because, hey, that's your prerogative.</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div><!-- POST -->
+            {% endfor %}
+
+        </div>
+        <div class="col-lg-4 col-md-4">
+
+            <!-- -->
+            <div class="sidebarblock">
+                <h3>Категории тем</h3>
+                <div class="divline"></div>
+                <div class="blocktxt">
+                    <ul class="cats">
+                        {% for category in categories %}
+                            <li><a href="/dobro/category-posts/{{category.id}}">{{ category.title}} <span class="badge pull-right">{{category.getPostCount}}</span></a></li>
+                        {% endfor %}
+                    
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6" style="margin:20px 0;">
+              Записи с {{ posts.currentPage }} до {{ posts.count * posts.currentPage }} из {{ posts.total }} записей
+        </div>
+          <div class="col-md-6">
+                {{ posts.render|raw }}
+          </div>
+    </div>
+</div>
+

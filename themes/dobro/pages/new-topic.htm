@@ -1,0 +1,133 @@
+title = "Create new topic"
+url = "/new-topic"
+layout = "default"
+is_hidden = 0
+==
+<?php
+   use Elaman\Dobro\Models\Post;
+   use Elaman\Dobro\Models\PostCategory;
+   
+      function onStart(){
+      
+          $this['categories'] = PostCategory::get();
+         
+      }
+   
+      function onSubmit(){
+         $rules = [
+             'title'     => 'required',
+             'category_id'  => 'required',
+             'author' => 'required',
+         ];
+          
+          $messages = [
+           'title.required' => 'Название темы обязательно ',
+           'category_id.required' => 'Поле местоположения обязательно для заполнения ',
+           'author.required' => 'Ваше имя обязательно ',
+          ]; 
+         $validator = Validator::make(post(), $rules,$messages);
+         
+         if($validator->fails()){
+             throw new ValidationException($validator);
+             
+         } 
+         else {
+            
+              $comm = new Post();
+              $comm->post_category_id = Input::get('category_id');
+              $comm->title = Input::get('title');
+              $comm->content = Input::get('content');
+              $comm->slug = str_slug(Input::get('title'));
+  			  $comm->author = Input::get('author');
+  			  $comm->phone = Input::get('phone');
+  			  $comm->address = Input::get('address');	
+              $comm->save();
+               
+               return Redirect::to('/');
+              //return Redirect::to('/rezervasyon/basarili');
+              
+           }
+   }
+   ?>
+==
+ <div class="container">
+    <div class="row">
+        <div class="col-lg-8 breadcrumbf">
+            <a href="/dobro">Главная</a> <span class="diviver">&gt;</span>  <a href="#">Новая тема</a>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-8">
+        	{% flash %}
+	            <div class="mg_comment_message" style="float: left;width: 100%;margin:0 0 30px; ">
+	              <div class="alert alert-{{ type }}">
+	                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	                  {{ message }}
+	              </div>
+	            </div> 
+	         {% endflash %}
+        	<!-- POST -->
+            <div class="post">
+            	 {{ form_ajax('onSubmit',{ class: 'form newtopic'}) }}
+               
+                    <div class="topwrap">
+                        
+                        <div class="posttext pull-right">
+
+                            <div>
+                                <input type="text" name="title" placeholder="Введите название темы" class="form-control" />
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6">
+                                    <select name="category_id" id="category"  class="form-control" >
+                                        <option value="" disabled selected>Выберите город</option>
+                                        {% for category in categories %}
+
+                                        <option value="{{category.id}}">{{ category.title}}</option>
+
+                                        {% endfor %}
+                                       
+                                    </select>
+                                </div>
+                                
+                            </div>
+
+                            <div>
+                                <textarea name="content" id="desc" placeholder="Описание"  class="form-control" ></textarea>
+                            </div>
+
+                            <div>
+                                <input type="text" name="author" placeholder="Введите ваше имя" class="form-control" />
+                            </div>
+
+                            <div>
+                                <input type="text" name="address" placeholder="Введите свой адрес" class="form-control" />
+                            </div>
+
+                            <div>
+                                <input type="text" name="phone" placeholder="Введите свой номер телефона" class="form-control" />
+                            </div>
+                         
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>                              
+                    <div class="postinfobot">
+
+                       
+                        <div class="pull-right postreply">
+                            <div class="pull-left smile"><a href="#"><i class="fa fa-smile-o"></i></a></div>
+                            <div class="pull-left"><button type="submit" class="btn btn-primary">Опубликовать</button></div>
+                            <div class="clearfix"></div>
+                        </div>
+
+
+                        <div class="clearfix"></div>
+                    </div>
+                {{ form_close() }}
+            </div><!-- POST -->
+        </div>
+    </div>
+</div>	

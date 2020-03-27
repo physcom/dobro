@@ -1,0 +1,18 @@
+fields:
+    title:
+        label: Title
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: right
+        preset:
+            field: title
+            type: slug
+        type: text
+    parent:
+        label: Parent
+        nameFrom: title
+        descriptionFrom: description
+        span: auto
+        type: relation

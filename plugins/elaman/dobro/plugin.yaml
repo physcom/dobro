@@ -1,0 +1,20 @@
+plugin:
+    name: 'elaman.dobro::lang.plugin.name'
+    description: 'elaman.dobro::lang.plugin.description'
+    author: Elaman
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: 'Post Category'
+        url: elaman/dobro/postcategory
+        icon: icon-life-ring
+    main-menu-item2:
+        label: Posts
+        url: elaman/dobro/posts
+        icon: icon-life-ring
+        sideMenu:
+            side-menu-item:
+                label: Comments
+                url: elaman/dobro/postcomment
+                icon: icon-weixin

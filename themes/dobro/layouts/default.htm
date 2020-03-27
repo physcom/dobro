@@ -1,0 +1,62 @@
+description = "Default layout"
+==
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        {% partial 'meta' %}
+    </head>
+    <body>
+
+        <div class="container-fluid">  
+
+            <!-- Slider -->
+            <div class="tp-banner-container">
+                <div class="tp-banner" >
+                    <!-- MAIN IMAGE -->
+                    <img src="{{'assets/images/slide.jpg'|theme}}"  alt="slidebg1"  class="img-responsive" style="width: 100%;"> 
+
+                </div>
+
+            </div>
+            <!-- //Slider -->
+
+
+        <!-- Header -->
+        <header id="layout-header">
+            {% partial 'site/header' %}
+        </header>
+
+        <!-- Content -->
+        <section class="content">
+            {% page %}
+        </section>
+
+        <!-- Footer -->
+        <footer id="layout-footer">
+            {% partial 'site/footer' %}
+        </footer>
+
+        <!-- get jQuery from the google apis -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js"></script>
+
+        
+        <!-- core JS -->
+        <script src="{{ [
+          
+          'assets/rs-plugin/js/jquery.themepunch.plugins.min.js',
+          'assets/rs-plugin/js/jquery.themepunch.revolution.min.js',
+          'assets/js/bootstrap.min.js',
+          'assets/js/sharer.js',
+          'assets/sweetalert/sweetalert.min.js'
+
+        ] |theme }}"></script>
+        {% framework extras %}
+        {% scripts %}
+
+        
+
+        </div>
+
+    </body>
+</html>

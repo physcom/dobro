@@ -1,0 +1,9 @@
+columns:
+    title:
+        label: Title
+        type: text
+    parent:
+        label: Parent
+        type: text
+        select: title
+        relation: parent

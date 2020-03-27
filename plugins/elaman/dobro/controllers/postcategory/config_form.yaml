@@ -1,0 +1,10 @@
+name: PostCategory
+form: $/elaman/dobro/models/postcategory/fields.yaml
+modelClass: Elaman\Dobro\Models\PostCategory
+defaultRedirect: elaman/dobro/postcategory
+create:
+    redirect: 'elaman/dobro/postcategory/update/:id'
+    redirectClose: elaman/dobro/postcategory
+update:
+    redirect: elaman/dobro/postcategory
+    redirectClose: elaman/dobro/postcategory

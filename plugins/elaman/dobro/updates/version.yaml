@@ -1,0 +1,29 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table elaman_dobro_post_category'
+    - builder_table_create_elaman_dobro_post_category.php
+1.0.3:
+    - 'Updated table elaman_dobro_post_category'
+    - builder_table_update_elaman_dobro_post_category.php
+1.0.4:
+    - 'Created table elaman_dobro_posts'
+    - builder_table_create_elaman_dobro_posts.php
+1.0.5:
+    - 'Updated table elaman_dobro_posts'
+    - builder_table_update_elaman_dobro_posts.php
+1.0.6:
+    - 'Updated table elaman_dobro_posts'
+    - builder_table_update_elaman_dobro_posts_2.php
+1.0.7:
+    - 'Updated table elaman_dobro_posts'
+    - builder_table_update_elaman_dobro_posts_3.php
+1.0.8:
+    - 'Updated table elaman_dobro_posts'
+    - builder_table_update_elaman_dobro_posts_4.php
+1.0.9:
+    - 'Updated table elaman_dobro_posts'
+    - builder_table_update_elaman_dobro_posts_5.php
+1.0.10:
+    - 'Created table elaman_dobro_comments'
+    - builder_table_create_elaman_dobro_comments.php
