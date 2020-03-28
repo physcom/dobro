@@ -1,4 +1,4 @@
-1585254114a:1:{s:8:"home.htm";a:8:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:5065:"title = "Demonstration"
+1585387518a:1:{s:8:"home.htm";a:8:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:5060:"title = "Добро"
 url = "/"
 layout = "default"
 ==
@@ -13,8 +13,6 @@ layout = "default"
 
 ?>
 ==
-
-
 
 <div class="container">
     <div class="row">
@@ -122,7 +120,7 @@ layout = "default"
     </div>
 </div>
 
-";s:5:"mtime";i:1585252818;s:6:"markup";s:4757:"<div class="container">
+";s:5:"mtime";i:1585386712;s:6:"markup";s:4757:"<div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-8">
             {% for post in posts %}
@@ -232,4 +230,4 @@ layout = "default"
    function onStart(){
        $this['posts'] = Post::orderBy('created_at', 'desc')->paginate(2);
        $this['categories'] = PostCategory::get();
-   }";s:5:"title";s:13:"Demonstration";s:3:"url";s:1:"/";s:6:"layout";s:7:"default";}}
+   }";s:5:"title";s:10:"Добро";s:3:"url";s:1:"/";s:6:"layout";s:7:"default";}}

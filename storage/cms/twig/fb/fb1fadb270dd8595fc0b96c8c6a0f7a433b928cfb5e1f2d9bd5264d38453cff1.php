@@ -38,26 +38,26 @@ class __TwigTemplate_1586b6c5a8cec87575a39f94b98b6adcca5a516cf2098cdccc78fbe1902
 <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
 <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
 
-<title>October CMS - ";
+<title>Күндолүк - ";
         // line 5
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 5), "title", [], "any", false, false, false, 5), "html", null, true);
         echo "</title>
 
 
 <!-- made by www.metatags.org -->
-<meta name=\"description\" content=\"Balayı Burada - Bütün Türkiye genelinde balayı çiftleri için en güzel şekilde geçirmesini sağlamaktır. Balayı Fırsatlarını ve Paketlerini yakalayın veya kendinize özel balayı programı yaratın.\" />
-<meta name=\"keywords\" content=\"Türkiye balayı,balayı paketleri,balayı fırsatları,balayı nerede yapılır,kapadokya balayı paketleri,fethiye balayı paketleri, balon turu dahil balayı fırsatları\" />
+<meta name=\"description\" content=\"Күндолүк Добро\" />
+<meta name=\"keywords\" content=\"Күндолүк, Добро\" />
 <meta name=\"author\" content=\"metatags generator\">
 <meta name=\"robots\" content=\"index, follow\">
 <meta name=\"revisit-after\" content=\"3 month\">
 <!--  -->
 <meta property=\"og:type\" content=\"website\">
-<meta property=\"og:site_name\" content=\"Balayı Burada - Balayi Paket Tur Fırsatları Avantajlı Fiyatlarla\">
-<meta property=\"og:title\" content=\"Balayı Burada - Balayi Paket Tur Fırsatları Avantajlı Fiyatlarla\">
+<meta property=\"og:site_name\" content=\"Күндолүк Добро\">
+<meta property=\"og:title\" content=\"Күндолүк Добро\">
 <meta property=\"og:image\" content=\"\">
 <meta property=\"image_src\" content=\"\">
 <meta property=\"og:url\" content=\"\">
-<meta property=\"og:description\" content=\"Balayı Burada - Bütün Türkiye genelinde balayı çiftleri için en güzel şekilde geçirmesini sağlamaktır. Balayı Fırsatlarını ve Paketlerini yakalayın veya kendinize özel balayı programı yaratın.\">
+<meta property=\"og:description\" content=\"Күндолүк Добро\">
 
 
 <!-- core CSS -->
@@ -98,23 +98,23 @@ class __TwigTemplate_1586b6c5a8cec87575a39f94b98b6adcca5a516cf2098cdccc78fbe1902
 <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
 <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
 
-<title>October CMS - {{ this.page.title }}</title>
+<title>Күндолүк - {{ this.page.title }}</title>
 
 
 <!-- made by www.metatags.org -->
-<meta name=\"description\" content=\"Balayı Burada - Bütün Türkiye genelinde balayı çiftleri için en güzel şekilde geçirmesini sağlamaktır. Balayı Fırsatlarını ve Paketlerini yakalayın veya kendinize özel balayı programı yaratın.\" />
-<meta name=\"keywords\" content=\"Türkiye balayı,balayı paketleri,balayı fırsatları,balayı nerede yapılır,kapadokya balayı paketleri,fethiye balayı paketleri, balon turu dahil balayı fırsatları\" />
+<meta name=\"description\" content=\"Күндолүк Добро\" />
+<meta name=\"keywords\" content=\"Күндолүк, Добро\" />
 <meta name=\"author\" content=\"metatags generator\">
 <meta name=\"robots\" content=\"index, follow\">
 <meta name=\"revisit-after\" content=\"3 month\">
 <!--  -->
 <meta property=\"og:type\" content=\"website\">
-<meta property=\"og:site_name\" content=\"Balayı Burada - Balayi Paket Tur Fırsatları Avantajlı Fiyatlarla\">
-<meta property=\"og:title\" content=\"Balayı Burada - Balayi Paket Tur Fırsatları Avantajlı Fiyatlarla\">
+<meta property=\"og:site_name\" content=\"Күндолүк Добро\">
+<meta property=\"og:title\" content=\"Күндолүк Добро\">
 <meta property=\"og:image\" content=\"\">
 <meta property=\"image_src\" content=\"\">
 <meta property=\"og:url\" content=\"\">
-<meta property=\"og:description\" content=\"Balayı Burada - Bütün Türkiye genelinde balayı çiftleri için en güzel şekilde geçirmesini sağlamaktır. Balayı Fırsatlarını ve Paketlerini yakalayın veya kendinize özel balayı programı yaratın.\">
+<meta property=\"og:description\" content=\"Күндолүк Добро\">
 
 
 <!-- core CSS -->

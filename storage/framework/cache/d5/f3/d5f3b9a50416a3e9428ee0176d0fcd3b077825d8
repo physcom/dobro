@@ -1,24 +1,24 @@
-1585254476a:1:{s:8:"meta.htm";a:5:{s:8:"fileName";s:8:"meta.htm";s:7:"content";s:2049:"<meta charset="utf-8">
+1585387518a:1:{s:8:"meta.htm";a:5:{s:8:"fileName";s:8:"meta.htm";s:7:"content";s:1455:"<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>October CMS - {{ this.page.title }}</title>
+<title>Күндолүк - {{ this.page.title }}</title>
 
 
 <!-- made by www.metatags.org -->
-<meta name="description" content="Balayı Burada - Bütün Türkiye genelinde balayı çiftleri için en güzel şekilde geçirmesini sağlamaktır. Balayı Fırsatlarını ve Paketlerini yakalayın veya kendinize özel balayı programı yaratın." />
-<meta name="keywords" content="Türkiye balayı,balayı paketleri,balayı fırsatları,balayı nerede yapılır,kapadokya balayı paketleri,fethiye balayı paketleri, balon turu dahil balayı fırsatları" />
+<meta name="description" content="Күндолүк Добро" />
+<meta name="keywords" content="Күндолүк, Добро" />
 <meta name="author" content="metatags generator">
 <meta name="robots" content="index, follow">
 <meta name="revisit-after" content="3 month">
 <!--  -->
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Balayı Burada - Balayi Paket Tur Fırsatları Avantajlı Fiyatlarla">
-<meta property="og:title" content="Balayı Burada - Balayi Paket Tur Fırsatları Avantajlı Fiyatlarla">
+<meta property="og:site_name" content="Күндолүк Добро">
+<meta property="og:title" content="Күндолүк Добро">
 <meta property="og:image" content="">
 <meta property="image_src" content="">
 <meta property="og:url" content="">
-<meta property="og:description" content="Balayı Burada - Bütün Türkiye genelinde balayı çiftleri için en güzel şekilde geçirmesini sağlamaktır. Balayı Fırsatlarını ve Paketlerini yakalayın veya kendinize özel balayı programı yaratın.">
+<meta property="og:description" content="Күндолүк Добро">
 
 
 <!-- core CSS -->
@@ -37,27 +37,27 @@
   ] |theme }}.css" rel="stylesheet">
 
 {% styles %}
-";s:5:"mtime";i:1585250759;s:6:"markup";s:2048:"<meta charset="utf-8">
+";s:5:"mtime";i:1585386780;s:6:"markup";s:1454:"<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>October CMS - {{ this.page.title }}</title>
+<title>Күндолүк - {{ this.page.title }}</title>
 
 
 <!-- made by www.metatags.org -->
-<meta name="description" content="Balayı Burada - Bütün Türkiye genelinde balayı çiftleri için en güzel şekilde geçirmesini sağlamaktır. Balayı Fırsatlarını ve Paketlerini yakalayın veya kendinize özel balayı programı yaratın." />
-<meta name="keywords" content="Türkiye balayı,balayı paketleri,balayı fırsatları,balayı nerede yapılır,kapadokya balayı paketleri,fethiye balayı paketleri, balon turu dahil balayı fırsatları" />
+<meta name="description" content="Күндолүк Добро" />
+<meta name="keywords" content="Күндолүк, Добро" />
 <meta name="author" content="metatags generator">
 <meta name="robots" content="index, follow">
 <meta name="revisit-after" content="3 month">
 <!--  -->
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Balayı Burada - Balayi Paket Tur Fırsatları Avantajlı Fiyatlarla">
-<meta property="og:title" content="Balayı Burada - Balayi Paket Tur Fırsatları Avantajlı Fiyatlarla">
+<meta property="og:site_name" content="Күндолүк Добро">
+<meta property="og:title" content="Күндолүк Добро">
 <meta property="og:image" content="">
 <meta property="image_src" content="">
 <meta property="og:url" content="">
-<meta property="og:description" content="Balayı Burada - Bütün Türkiye genelinde balayı çiftleri için en güzel şekilde geçirmesini sağlamaktır. Balayı Fırsatlarını ve Paketlerini yakalayın veya kendinize özel balayı programı yaratın.">
+<meta property="og:description" content="Күндолүк Добро">
 
 
 <!-- core CSS -->

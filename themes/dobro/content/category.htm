@@ -1,0 +1,24 @@
+==
+<?php
+
+   use Elaman\Dobro\Models\PostCategory;
+       
+   function onStart(){
+       $this['categories'] = PostCategory::get();
+   }
+
+?>
+==
+<!-- -->
+<div class="sidebarblock">
+    <h3>Категории тем</h3>
+    <div class="divline"></div>
+    <div class="blocktxt">
+        <ul class="cats">
+            {% for category in categories %}
+                <li><a href="/dobro/category-posts/{{category.id}}">{{ category.title}} <span class="badge pull-right">{{category.getPostCount}}</span></a></li>
+            {% endfor %}
+        
+        </ul>
+    </div>
+</div>

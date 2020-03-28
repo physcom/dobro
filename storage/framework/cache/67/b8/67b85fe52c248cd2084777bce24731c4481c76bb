@@ -1,31 +1,27 @@
-1585254476a:1:{s:15:"site/footer.htm";a:5:{s:8:"fileName";s:15:"site/footer.htm";s:7:"content";s:825:"
+1585386963a:1:{s:15:"site/footer.htm";a:5:{s:8:"fileName";s:15:"site/footer.htm";s:7:"content";s:723:"
 <div class="container">
     <div class="row">
-        <div class="col-lg-1 col-xs-3 col-sm-2 logo "><a href="#"><img src="images/logo.jpg" alt=""  /></a></div>
+        <div class="col-lg-1 col-xs-3 col-sm-2 logo "><a href="#"><img src="{{'assets/images/logo.png'|theme}}" alt=""  / style="width: 110px;"></a></div>
         <div class="col-lg-8 col-xs-9 col-sm-5 ">Copyrights 2020, Kundoluk</div>
         <div class="col-lg-3 col-xs-12 col-sm-5 sociconcent">
             <ul class="socialicons">
                 <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                <li><a href="#"><i class="fa fa-cloud"></i></a></li>
+                 <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
                 <li><a href="#"><i class="fa fa-rss"></i></a></li>
             </ul>
         </div>
     </div>
 </div>
-";s:5:"mtime";i:1585214298;s:6:"markup";s:823:"<div class="container">
+";s:5:"mtime";i:1585379222;s:6:"markup";s:721:"<div class="container">
     <div class="row">
-        <div class="col-lg-1 col-xs-3 col-sm-2 logo "><a href="#"><img src="images/logo.jpg" alt=""  /></a></div>
+        <div class="col-lg-1 col-xs-3 col-sm-2 logo "><a href="#"><img src="{{'assets/images/logo.png'|theme}}" alt=""  / style="width: 110px;"></a></div>
         <div class="col-lg-8 col-xs-9 col-sm-5 ">Copyrights 2020, Kundoluk</div>
         <div class="col-lg-3 col-xs-12 col-sm-5 sociconcent">
             <ul class="socialicons">
                 <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                <li><a href="#"><i class="fa fa-cloud"></i></a></li>
+                 <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
                 <li><a href="#"><i class="fa fa-rss"></i></a></li>
             </ul>
         </div>

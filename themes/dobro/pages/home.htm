@@ -1,4 +1,4 @@
-title = "Demonstration"
+title = "Добро"
 url = "/"
 layout = "default"
 ==
@@ -13,8 +13,6 @@ layout = "default"
 
 ?>
 ==
-
-
 
 <div class="container">
     <div class="row">
@@ -31,7 +29,7 @@ layout = "default"
                         </div>
                         <div class="posttext pull-right">
                             <h2>
-                                <a href="/dobro/post/{{post.id}}">{{post.title}}</a>
+                                <a href="/post/{{post.id}}">{{post.title}}</a>
                             </h2>
                             <p>{{post.content|raw}}</p>
                         </div>
@@ -101,7 +99,7 @@ layout = "default"
                 <div class="blocktxt">
                     <ul class="cats">
                         {% for category in categories %}
-                            <li><a href="/dobro/category-posts/{{category.id}}">{{ category.title}} <span class="badge pull-right">{{category.getPostCount}}</span></a></li>
+                            <li><a href="/category-posts/{{category.id}}">{{ category.title}} <span class="badge pull-right">{{category.getPostCount}}</span></a></li>
                         {% endfor %}
                     
                     </ul>

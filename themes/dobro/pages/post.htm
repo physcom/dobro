@@ -1,4 +1,4 @@
-title = "Post"
+title = "Тема"
 url = "/post/:id"
 layout = "default"
 ==
@@ -87,7 +87,7 @@ layout = "default"
 <div class="container">
     <div class="row">
         <div class="col-lg-8 breadcrumbf">
-            <a href="/dobro">Главная</a> <span class="diviver">&gt;</span>  <a href="#">Детали темы</a>
+            <a href="/">Главная</a> <span class="diviver">&gt;</span>  <a href="#">Детали темы</a>
         </div>
     </div>
 </div>
@@ -215,7 +215,7 @@ layout = "default"
                 <div class="blocktxt">
                     <ul class="cats">
                         {% for category in categories %}
-                            <li><a href="/dobro/category-posts/{{category.id}}">{{ category.title}} <span class="badge pull-right">{{category.getPostCount}}</span></a></li>
+                            <li><a href="/category-posts/{{category.id}}">{{ category.title}} <span class="badge pull-right">{{category.getPostCount}}</span></a></li>
                         {% endfor %}
                     
                     </ul>

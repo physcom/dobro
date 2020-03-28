@@ -92,18 +92,14 @@ class __TwigTemplate_7f9af520a4c0c7a78f3171c572b18664e877bc8c69a5a6a4fb9eaa23c9c
         // line 36
         echo "        </footer>
 
-        <!-- get jQuery from the google apis -->
-        <script type=\"text/javascript\" src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js\"></script>
-
-        
         <!-- core JS -->
         <script src=\"";
-        // line 43
-        echo $this->extensions['Cms\Twig\Extension']->themeFilter([0 => "assets/rs-plugin/js/jquery.themepunch.plugins.min.js", 1 => "assets/rs-plugin/js/jquery.themepunch.revolution.min.js", 2 => "assets/js/bootstrap.min.js", 3 => "assets/js/sharer.js", 4 => "assets/sweetalert/sweetalert.min.js"]);
-        // line 51
+        // line 39
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter([0 => "assets/js/jquery.js", 1 => "assets/rs-plugin/js/jquery.themepunch.plugins.min.js", 2 => "assets/rs-plugin/js/jquery.themepunch.revolution.min.js", 3 => "assets/js/bootstrap.min.js", 4 => "assets/js/sharer.js", 5 => "assets/sweetalert/sweetalert.min.js"]);
+        // line 47
         echo "\"></script>
         ";
-        // line 52
+        // line 48
         $_minify = System\Classes\CombineAssets::instance()->useMinify;
         if ($_minify) {
             echo '<script src="' . Request::getBasePath() . '/modules/system/assets/js/framework.combined-min.js"></script>'.PHP_EOL;
@@ -114,11 +110,11 @@ class __TwigTemplate_7f9af520a4c0c7a78f3171c572b18664e877bc8c69a5a6a4fb9eaa23c9c
         }
         echo '<link rel="stylesheet" property="stylesheet" href="' . Request::getBasePath() .'/modules/system/assets/css/framework.extras'.($_minify ? '-min' : '').'.css">'.PHP_EOL;
         unset($_minify);
-        // line 53
+        // line 49
         echo "        ";
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('js');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('scripts');
-        // line 54
+        // line 50
         echo "
         
 
@@ -140,7 +136,7 @@ class __TwigTemplate_7f9af520a4c0c7a78f3171c572b18664e877bc8c69a5a6a4fb9eaa23c9c
 
     public function getDebugInfo()
     {
-        return array (  122 => 54,  118 => 53,  107 => 52,  104 => 51,  102 => 43,  93 => 36,  89 => 35,  83 => 31,  81 => 30,  75 => 26,  71 => 25,  58 => 15,  47 => 6,  43 => 5,  37 => 1,);
+        return array (  118 => 50,  114 => 49,  103 => 48,  100 => 47,  98 => 39,  93 => 36,  89 => 35,  83 => 31,  81 => 30,  75 => 26,  71 => 25,  58 => 15,  47 => 6,  43 => 5,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -182,13 +178,9 @@ class __TwigTemplate_7f9af520a4c0c7a78f3171c572b18664e877bc8c69a5a6a4fb9eaa23c9c
             {% partial 'site/footer' %}
         </footer>
 
-        <!-- get jQuery from the google apis -->
-        <script type=\"text/javascript\" src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js\"></script>
-
-        
         <!-- core JS -->
         <script src=\"{{ [
-          
+          'assets/js/jquery.js',
           'assets/rs-plugin/js/jquery.themepunch.plugins.min.js',
           'assets/rs-plugin/js/jquery.themepunch.revolution.min.js',
           'assets/js/bootstrap.min.js',

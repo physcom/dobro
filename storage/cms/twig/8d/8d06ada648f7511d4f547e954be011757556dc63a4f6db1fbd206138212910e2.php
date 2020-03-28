@@ -37,7 +37,7 @@ class __TwigTemplate_cf8b5b3b4747fa80546dd85c85f11a7a595fd6c9511f0bce912de4486ce
         echo "<div class=\"container\">
     <div class=\"row\">
         <div class=\"col-lg-8 breadcrumbf\">
-            <a href=\"/dobro\">Home</a> <span class=\"diviver\">&gt;</span>  <a href=\"#\">";
+            <a href=\"/dobro\">Главная</a> <span class=\"diviver\">&gt;</span>  <a href=\"#\">";
         // line 4
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["category"] ?? null), "title", [], "any", false, false, false, 4), "html", null, true);
         echo "</a>
@@ -100,7 +100,7 @@ class __TwigTemplate_cf8b5b3b4747fa80546dd85c85f11a7a595fd6c9511f0bce912de4486ce
             echo "</div>
                         <div class=\"time\"><i class=\"fa fa-clock-o\"></i> Опубликовано : ";
             // line 39
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "created_at", [], "any", false, false, false, 39), "m/d/Y H:m"), "html", null, true);
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "created_at", [], "any", false, false, false, 39), "d.m.Y H:m"), "html", null, true);
             echo "</div>                                    
                     </div>
                     <div class=\"postinfobot\">
@@ -171,7 +171,7 @@ class __TwigTemplate_cf8b5b3b4747fa80546dd85c85f11a7a595fd6c9511f0bce912de4486ce
 
             <!-- -->
             <div class=\"sidebarblock\">
-                <h3>Категориялар</h3>
+                <h3>Категории тем</h3>
                 <div class=\"divline\"></div>
                 <div class=\"blocktxt\">
                     <ul class=\"cats\">
@@ -244,7 +244,7 @@ class __TwigTemplate_cf8b5b3b4747fa80546dd85c85f11a7a595fd6c9511f0bce912de4486ce
         return new Source("<div class=\"container\">
     <div class=\"row\">
         <div class=\"col-lg-8 breadcrumbf\">
-            <a href=\"/dobro\">Home</a> <span class=\"diviver\">&gt;</span>  <a href=\"#\">{{category.title}}</a>
+            <a href=\"/dobro\">Главная</a> <span class=\"diviver\">&gt;</span>  <a href=\"#\">{{category.title}}</a>
         </div>
     </div>
 </div>
@@ -279,7 +279,7 @@ class __TwigTemplate_cf8b5b3b4747fa80546dd85c85f11a7a595fd6c9511f0bce912de4486ce
 
                         </div>
                         <div class=\"views\"><i class=\"fa fa-eye\"></i> {{post.view_count}}</div>
-                        <div class=\"time\"><i class=\"fa fa-clock-o\"></i> Опубликовано : {{post.created_at|date(\"m/d/Y H:m\")}}</div>                                    
+                        <div class=\"time\"><i class=\"fa fa-clock-o\"></i> Опубликовано : {{post.created_at|date(\"d.m.Y H:m\")}}</div>                                    
                     </div>
                     <div class=\"postinfobot\">
 
@@ -328,7 +328,7 @@ class __TwigTemplate_cf8b5b3b4747fa80546dd85c85f11a7a595fd6c9511f0bce912de4486ce
 
             <!-- -->
             <div class=\"sidebarblock\">
-                <h3>Категориялар</h3>
+                <h3>Категории тем</h3>
                 <div class=\"divline\"></div>
                 <div class=\"blocktxt\">
                     <ul class=\"cats\">
