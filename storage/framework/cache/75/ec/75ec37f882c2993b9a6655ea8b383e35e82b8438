@@ -1,0 +1,446 @@
+1585580432a:1:{s:8:"post.htm";a:8:{s:8:"fileName";s:8:"post.htm";s:7:"content";s:8410:"title = "Тема"
+url = "/post/:id"
+layout = "default"
+==
+<?php
+   use Elaman\Dobro\Models\Post;
+   use Elaman\Dobro\Models\PostCategory;
+   use Elaman\Dobro\Models\PostComment;
+       
+    function onStart(){
+       $post = Post::where('id',$this->param('id'))->with('comments')->first();
+       if(!empty($post))
+        {
+         $post->view_count = $post->view_count + 1;
+         $post->save();
+        }
+       
+       $this['post'] = $post; 
+       $this['categories'] = PostCategory::get();
+    }
+
+    function onSubmitComment(){
+         $rules = [
+             'author' => 'required',
+             'comment'     => 'required',
+         ];
+          
+          $messages = [
+           'author.required' => 'Author required ',
+           'comment.required' => 'Comment required ',
+          
+          ]; 
+         $validator = Validator::make(post(), $rules,$messages);
+         
+         if($validator->fails()){
+             throw new ValidationException($validator);
+             
+         } 
+         else {
+            
+            $comm = new PostComment();
+            $comm->post_id = $this->param('id');
+            $comm->author = Input::get('author');
+            $comm->comment = Input::get('comment'); 
+            $comm->save();
+               
+            return Redirect::to('/post/'.$this->param('id'));               
+        }
+   } 
+
+?>
+==
+<script type="text/javascript">
+  
+  function upVote(post_id){
+    console.log("Post id ", post_id);
+    swal({
+      title: "Are you sure?",
+      text: "You are going to upvo!",
+      type: "info",
+      showCancelButton: true,
+      confirmButtonClass: "btn-success",
+      confirmButtonText: "Yes, upvote!",
+      closeOnConfirm: false
+    },
+    function(){
+        
+        $.post("upvote-post",
+          {
+            post_id: post_id
+          },
+          function(data, status){
+                if(status == "success"){
+                  swal("Успешно", "Upvote", "success");
+                  location.reload();
+                  //window.location.href = "/medicine";
+                }
+                else{
+                  swal("Cancelled", "Something Bad!", "error");
+                  location.reload();
+                  //window.location.href = "/medicine";
+                }
+          });
+    });
+  }
+</script> 
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 breadcrumbf">
+            <a href="{{ url('/') }}">Главная</a> <span class="diviver">&gt;</span>  <a href="#">Детали темы</a>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-8">
+
+            <!-- POST -->
+            <div class="post beforepagination">
+                <div class="topwrap">
+                    <div class="userinfo pull-left">
+                        <div class="avatar">
+                            <img src="{{'assets/images/avatar2.jpg'|theme}}" alt="" />
+                        </div>
+
+                        <div class="icons">
+                           <h3>{{post.author}}</h3>
+                        </div>
+                    </div>
+                    <div class="posttext pull-right">
+                        <h2>{{post.title}}</h2>
+                        <p>
+                            {{post.content}}
+                        </p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>                              
+                <div class="postinfobot">
+
+                    <div class="likeblock pull-left">
+                        <button class="up" onclick="upVote('{{post.id}}')">
+                            <i class="fa fa-thumbs-o-up"></i>{{post.upvote_count}}
+                        </button>
+                    
+                    </div>
+                    <div class="posted pull-left"><i class="fa fa-clock-o"></i> Опубликовано : {{post.created_at|date("d.m.Y H:m")}}</div>
+
+                    <div class="next pull-right">                                        
+                        <a href="#" class="sharer" data-sharer="facebook" data-url="{{ url('/') }}/post/{{post.id}}"> 
+                                <i class="fa fa-facebook-square " ></i>
+                        </a>
+                        
+                        <a href="#" class="sharer" data-sharer="whatsapp" data-url="{{ url('/') }}/post/{{post.id}}"> 
+                            <i class="fa fa-whatsapp" ></i>
+                        </a>
+                        
+
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+            </div><!-- POST -->
+
+         
+            <div class="clearfix" style="margin-top: 10px"></div>
+
+            {% for comment in post.comments %}
+            <!-- POST -->
+            <div class="post">
+                <div class="topwrap">
+                    <div class="userinfo pull-left">
+                        <div class="avatar">
+                            <img src="{{'assets/images/avatar2.jpg'|theme}}" alt="" />
+                        </div>
+
+                        <div class="icons">
+                            <h4>{{comment.author}}</h4>
+                        </div>
+                    </div>
+                    <div class="posttext pull-left">
+                        <p>{{comment.comment}}</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>                              
+                <div class="postinfobot">
+                    <div class="posted pull-left"><i class="fa fa-clock-o"></i> Опубликовано : {{comment.created_at|date("d.m.Y H:m")}}</div>
+                    <div class="clearfix"></div>
+                </div>
+            </div><!-- POST -->
+            {% endfor %}    
+
+            <!-- POST -->
+            <div class="post">
+                 {{ form_ajax('onSubmitComment',{ class: 'form'}) }}
+              
+                    <div class="topwrap">
+                        
+                        <div class="comment pull-right">
+                            <div class="textwraper">
+                                <div class="postreply">Разместить ответ</div>
+                                <div class="form-group">
+                                    <label>Ваш имя</label>
+                                    <input type="text" name="author" class="form-control" placeholder="Введите ваше имя">
+                                
+                                </div>
+                                <div class="form-group">
+                                    <label>Ваш комментарий</label>
+                                     <textarea name="comment" id="reply" class="form-control" placeholder="Пишите ваше сообщение здесь"></textarea>
+                                </div>
+                                
+                               
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>                              
+                    <div class="postinfobot">
+                        <div class="pull-right postreply">
+                            <div class="pull-left smile"><a href="#"><i class="fa fa-smile-o"></i></a></div>
+                            <div class="pull-left"><button type="submit" class="btn btn-primary">Ответить</button></div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                {{ form_close() }}
+            </div><!-- POST -->
+
+
+        </div>
+        <div class="col-lg-4 col-md-4">
+
+            <!-- -->
+            <div class="sidebarblock">
+                <h3>Категории тем</h3>
+                <div class="divline"></div>
+                <div class="blocktxt">
+                    <ul class="cats">
+                        {% for category in categories %}
+                            <li><a href="{{ url('/') }}/category-posts/{{category.id}}">{{ category.title}} <span class="badge pull-right">{{category.getPostCount}}</span></a></li>
+                        {% endfor %}
+                    
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>";s:5:"mtime";i:1585578341;s:6:"markup";s:7039:"<script type="text/javascript">
+  
+  function upVote(post_id){
+    console.log("Post id ", post_id);
+    swal({
+      title: "Are you sure?",
+      text: "You are going to upvo!",
+      type: "info",
+      showCancelButton: true,
+      confirmButtonClass: "btn-success",
+      confirmButtonText: "Yes, upvote!",
+      closeOnConfirm: false
+    },
+    function(){
+        
+        $.post("upvote-post",
+          {
+            post_id: post_id
+          },
+          function(data, status){
+                if(status == "success"){
+                  swal("Успешно", "Upvote", "success");
+                  location.reload();
+                  //window.location.href = "/medicine";
+                }
+                else{
+                  swal("Cancelled", "Something Bad!", "error");
+                  location.reload();
+                  //window.location.href = "/medicine";
+                }
+          });
+    });
+  }
+</script> 
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 breadcrumbf">
+            <a href="{{ url('/') }}">Главная</a> <span class="diviver">&gt;</span>  <a href="#">Детали темы</a>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-8">
+
+            <!-- POST -->
+            <div class="post beforepagination">
+                <div class="topwrap">
+                    <div class="userinfo pull-left">
+                        <div class="avatar">
+                            <img src="{{'assets/images/avatar2.jpg'|theme}}" alt="" />
+                        </div>
+
+                        <div class="icons">
+                           <h3>{{post.author}}</h3>
+                        </div>
+                    </div>
+                    <div class="posttext pull-right">
+                        <h2>{{post.title}}</h2>
+                        <p>
+                            {{post.content}}
+                        </p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>                              
+                <div class="postinfobot">
+
+                    <div class="likeblock pull-left">
+                        <button class="up" onclick="upVote('{{post.id}}')">
+                            <i class="fa fa-thumbs-o-up"></i>{{post.upvote_count}}
+                        </button>
+                    
+                    </div>
+                    <div class="posted pull-left"><i class="fa fa-clock-o"></i> Опубликовано : {{post.created_at|date("d.m.Y H:m")}}</div>
+
+                    <div class="next pull-right">                                        
+                        <a href="#" class="sharer" data-sharer="facebook" data-url="{{ url('/') }}/post/{{post.id}}"> 
+                                <i class="fa fa-facebook-square " ></i>
+                        </a>
+                        
+                        <a href="#" class="sharer" data-sharer="whatsapp" data-url="{{ url('/') }}/post/{{post.id}}"> 
+                            <i class="fa fa-whatsapp" ></i>
+                        </a>
+                        
+
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+            </div><!-- POST -->
+
+         
+            <div class="clearfix" style="margin-top: 10px"></div>
+
+            {% for comment in post.comments %}
+            <!-- POST -->
+            <div class="post">
+                <div class="topwrap">
+                    <div class="userinfo pull-left">
+                        <div class="avatar">
+                            <img src="{{'assets/images/avatar2.jpg'|theme}}" alt="" />
+                        </div>
+
+                        <div class="icons">
+                            <h4>{{comment.author}}</h4>
+                        </div>
+                    </div>
+                    <div class="posttext pull-left">
+                        <p>{{comment.comment}}</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>                              
+                <div class="postinfobot">
+                    <div class="posted pull-left"><i class="fa fa-clock-o"></i> Опубликовано : {{comment.created_at|date("d.m.Y H:m")}}</div>
+                    <div class="clearfix"></div>
+                </div>
+            </div><!-- POST -->
+            {% endfor %}    
+
+            <!-- POST -->
+            <div class="post">
+                 {{ form_ajax('onSubmitComment',{ class: 'form'}) }}
+              
+                    <div class="topwrap">
+                        
+                        <div class="comment pull-right">
+                            <div class="textwraper">
+                                <div class="postreply">Разместить ответ</div>
+                                <div class="form-group">
+                                    <label>Ваш имя</label>
+                                    <input type="text" name="author" class="form-control" placeholder="Введите ваше имя">
+                                
+                                </div>
+                                <div class="form-group">
+                                    <label>Ваш комментарий</label>
+                                     <textarea name="comment" id="reply" class="form-control" placeholder="Пишите ваше сообщение здесь"></textarea>
+                                </div>
+                                
+                               
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>                              
+                    <div class="postinfobot">
+                        <div class="pull-right postreply">
+                            <div class="pull-left smile"><a href="#"><i class="fa fa-smile-o"></i></a></div>
+                            <div class="pull-left"><button type="submit" class="btn btn-primary">Ответить</button></div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                {{ form_close() }}
+            </div><!-- POST -->
+
+
+        </div>
+        <div class="col-lg-4 col-md-4">
+
+            <!-- -->
+            <div class="sidebarblock">
+                <h3>Категории тем</h3>
+                <div class="divline"></div>
+                <div class="blocktxt">
+                    <ul class="cats">
+                        {% for category in categories %}
+                            <li><a href="{{ url('/') }}/category-posts/{{category.id}}">{{ category.title}} <span class="badge pull-right">{{category.getPostCount}}</span></a></li>
+                        {% endfor %}
+                    
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>";s:4:"code";s:1298:"   use Elaman\Dobro\Models\Post;
+   use Elaman\Dobro\Models\PostCategory;
+   use Elaman\Dobro\Models\PostComment;
+       
+    function onStart(){
+       $post = Post::where('id',$this->param('id'))->with('comments')->first();
+       if(!empty($post))
+        {
+         $post->view_count = $post->view_count + 1;
+         $post->save();
+        }
+       
+       $this['post'] = $post; 
+       $this['categories'] = PostCategory::get();
+    }
+
+    function onSubmitComment(){
+         $rules = [
+             'author' => 'required',
+             'comment'     => 'required',
+         ];
+          
+          $messages = [
+           'author.required' => 'Author required ',
+           'comment.required' => 'Comment required ',
+          
+          ]; 
+         $validator = Validator::make(post(), $rules,$messages);
+         
+         if($validator->fails()){
+             throw new ValidationException($validator);
+             
+         } 
+         else {
+            
+            $comm = new PostComment();
+            $comm->post_id = $this->param('id');
+            $comm->author = Input::get('author');
+            $comm->comment = Input::get('comment'); 
+            $comm->save();
+               
+            return Redirect::to('/post/'.$this->param('id'));               
+        }
+   } ";s:5:"title";s:8:"Тема";s:3:"url";s:9:"/post/:id";s:6:"layout";s:7:"default";}}
