@@ -1,4 +1,4 @@
-1585386963a:1:{s:17:"category-post.htm";a:8:{s:8:"fileName";s:17:"category-post.htm";s:7:"content";s:5487:"title = "Category Post"
+1585578744a:1:{s:17:"category-post.htm";a:8:{s:8:"fileName";s:17:"category-post.htm";s:7:"content";s:5503:"title = "Category Post"
 url = "/category-posts/:category-id"
 layout = "default"
 ==
@@ -18,7 +18,7 @@ layout = "default"
 <div class="container">
     <div class="row">
         <div class="col-lg-8 breadcrumbf">
-            <a href="/dobro">Главная</a> <span class="diviver">&gt;</span>  <a href="#">{{category.title}}</a>
+            <a href="{{ url('/') }}">Главная</a> <span class="diviver">&gt;</span>  <a href="#">{{category.title}}</a>
         </div>
     </div>
 </div>
@@ -107,7 +107,7 @@ layout = "default"
                 <div class="blocktxt">
                     <ul class="cats">
                         {% for category in categories %}
-                            <li><a href="/dobro/category-posts/{{category.id}}">{{ category.title}} <span class="badge pull-right">{{category.getPostCount}}</span></a></li>
+                            <li><a href="{{ url('/') }}/category-posts/{{category.id}}">{{ category.title}} <span class="badge pull-right">{{category.getPostCount}}</span></a></li>
                         {% endfor %}
                     
                     </ul>
@@ -128,10 +128,10 @@ layout = "default"
     </div>
 </div>
 
-";s:5:"mtime";i:1585253964;s:6:"markup";s:5000:"<div class="container">
+";s:5:"mtime";i:1585425902;s:6:"markup";s:5016:"<div class="container">
     <div class="row">
         <div class="col-lg-8 breadcrumbf">
-            <a href="/dobro">Главная</a> <span class="diviver">&gt;</span>  <a href="#">{{category.title}}</a>
+            <a href="{{ url('/') }}">Главная</a> <span class="diviver">&gt;</span>  <a href="#">{{category.title}}</a>
         </div>
     </div>
 </div>
@@ -220,7 +220,7 @@ layout = "default"
                 <div class="blocktxt">
                     <ul class="cats">
                         {% for category in categories %}
-                            <li><a href="/dobro/category-posts/{{category.id}}">{{ category.title}} <span class="badge pull-right">{{category.getPostCount}}</span></a></li>
+                            <li><a href="{{ url('/') }}/category-posts/{{category.id}}">{{ category.title}} <span class="badge pull-right">{{category.getPostCount}}</span></a></li>
                         {% endfor %}
                     
                     </ul>

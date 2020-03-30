@@ -37,8 +37,10 @@ class __TwigTemplate_cf8b5b3b4747fa80546dd85c85f11a7a595fd6c9511f0bce912de4486ce
         echo "<div class=\"container\">
     <div class=\"row\">
         <div class=\"col-lg-8 breadcrumbf\">
-            <a href=\"/dobro\">Главная</a> <span class=\"diviver\">&gt;</span>  <a href=\"#\">";
+            <a href=\"";
         // line 4
+        echo url("/");
+        echo "\">Главная</a> <span class=\"diviver\">&gt;</span>  <a href=\"#\">";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["category"] ?? null), "title", [], "any", false, false, false, 4), "html", null, true);
         echo "</a>
         </div>
@@ -181,7 +183,9 @@ class __TwigTemplate_cf8b5b3b4747fa80546dd85c85f11a7a595fd6c9511f0bce912de4486ce
         $context['_seq'] = twig_ensure_traversable(($context["categories"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
             // line 93
-            echo "                            <li><a href=\"/dobro/category-posts/";
+            echo "                            <li><a href=\"";
+            echo url("/");
+            echo "/category-posts/";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 93), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "title", [], "any", false, false, false, 93), "html", null, true);
@@ -236,7 +240,7 @@ class __TwigTemplate_cf8b5b3b4747fa80546dd85c85f11a7a595fd6c9511f0bce912de4486ce
 
     public function getDebugInfo()
     {
-        return array (  220 => 109,  210 => 106,  197 => 95,  184 => 93,  180 => 92,  168 => 82,  143 => 62,  129 => 53,  123 => 50,  117 => 47,  111 => 44,  103 => 39,  99 => 38,  91 => 33,  81 => 26,  74 => 24,  66 => 19,  58 => 13,  53 => 12,  42 => 4,  37 => 1,);
+        return array (  224 => 109,  214 => 106,  201 => 95,  186 => 93,  182 => 92,  170 => 82,  145 => 62,  131 => 53,  125 => 50,  119 => 47,  113 => 44,  105 => 39,  101 => 38,  93 => 33,  83 => 26,  76 => 24,  68 => 19,  60 => 13,  55 => 12,  42 => 4,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -244,7 +248,7 @@ class __TwigTemplate_cf8b5b3b4747fa80546dd85c85f11a7a595fd6c9511f0bce912de4486ce
         return new Source("<div class=\"container\">
     <div class=\"row\">
         <div class=\"col-lg-8 breadcrumbf\">
-            <a href=\"/dobro\">Главная</a> <span class=\"diviver\">&gt;</span>  <a href=\"#\">{{category.title}}</a>
+            <a href=\"{{ url('/') }}\">Главная</a> <span class=\"diviver\">&gt;</span>  <a href=\"#\">{{category.title}}</a>
         </div>
     </div>
 </div>
@@ -333,7 +337,7 @@ class __TwigTemplate_cf8b5b3b4747fa80546dd85c85f11a7a595fd6c9511f0bce912de4486ce
                 <div class=\"blocktxt\">
                     <ul class=\"cats\">
                         {% for category in categories %}
-                            <li><a href=\"/dobro/category-posts/{{category.id}}\">{{ category.title}} <span class=\"badge pull-right\">{{category.getPostCount}}</span></a></li>
+                            <li><a href=\"{{ url('/') }}/category-posts/{{category.id}}\">{{ category.title}} <span class=\"badge pull-right\">{{category.getPostCount}}</span></a></li>
                         {% endfor %}
                     
                     </ul>

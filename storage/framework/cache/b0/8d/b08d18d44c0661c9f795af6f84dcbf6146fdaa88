@@ -1,4 +1,4 @@
-1585386963a:1:{s:15:"site/header.htm";a:5:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:1199:"<!-- Nav -->
+1585578744a:1:{s:15:"site/header.htm";a:5:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:1207:"<!-- Nav -->
 <div class="headernav">
     <div class="container">
         <div class="row">
@@ -15,7 +15,7 @@
             </div>
             <div class="col-lg-4 col-xs-12 col-sm-5 col-md-4 avt">
                 <div class="stnt pull-left">                            
-                    <form action="/dobro/new-topic" method="post" class="form">
+                    <form action="{{ url('/') }}/new-topic" method="post" class="form">
                         <button class="btn btn-primary"><i class="fa fa-plus" ></i> Начать новую тему</button>
                     </form>
                 </div>
@@ -25,7 +25,7 @@
         </div>
     </div>
 </div>
-";s:5:"mtime";i:1585253091;s:6:"markup";s:1198:"<!-- Nav -->
+";s:5:"mtime";i:1585425913;s:6:"markup";s:1206:"<!-- Nav -->
 <div class="headernav">
     <div class="container">
         <div class="row">
@@ -42,7 +42,7 @@
             </div>
             <div class="col-lg-4 col-xs-12 col-sm-5 col-md-4 avt">
                 <div class="stnt pull-left">                            
-                    <form action="/dobro/new-topic" method="post" class="form">
+                    <form action="{{ url('/') }}/new-topic" method="post" class="form">
                         <button class="btn btn-primary"><i class="fa fa-plus" ></i> Начать новую тему</button>
                     </form>
                 </div>

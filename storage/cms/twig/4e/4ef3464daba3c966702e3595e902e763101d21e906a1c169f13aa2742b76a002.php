@@ -37,7 +37,10 @@ class __TwigTemplate_fdec45916b59d539f7d608df30e96a759f82994bad9db67749f112d08cb
         echo "<div class=\"container\">
     <div class=\"row\">
         <div class=\"col-lg-8 breadcrumbf\">
-            <a href=\"/dobro\">Главная</a> <span class=\"diviver\">&gt;</span>  <a href=\"#\">Новая тема</a>
+            <a href=\"";
+        // line 4
+        echo url("/");
+        echo "\">Главная</a> <span class=\"diviver\">&gt;</span>  <a href=\"#\">Новая тема</a>
         </div>
     </div>
 </div>
@@ -130,19 +133,15 @@ class __TwigTemplate_fdec45916b59d539f7d608df30e96a759f82994bad9db67749f112d08cb
                         <div class=\"clearfix\"></div>
                     </div>                              
                     <div class=\"postinfobot\">
-
-                       
                         <div class=\"pull-right postreply\">
                             <div class=\"pull-left smile\"><a href=\"#\"><i class=\"fa fa-smile-o\"></i></a></div>
                             <div class=\"pull-left\"><button type=\"submit\" class=\"btn btn-primary\">Опубликовать</button></div>
                             <div class=\"clearfix\"></div>
                         </div>
-
-
                         <div class=\"clearfix\"></div>
                     </div>
                 ";
-        // line 77
+        // line 73
         echo call_user_func_array($this->env->getFunction('form_close')->getCallable(), ["close"]);
         echo "
             </div><!-- POST -->
@@ -163,7 +162,7 @@ class __TwigTemplate_fdec45916b59d539f7d608df30e96a759f82994bad9db67749f112d08cb
 
     public function getDebugInfo()
     {
-        return array (  146 => 77,  107 => 40,  96 => 37,  93 => 36,  89 => 35,  72 => 21,  68 => 19,  60 => 15,  55 => 13,  52 => 12,  49 => 11,  37 => 1,);
+        return array (  145 => 73,  110 => 40,  99 => 37,  96 => 36,  92 => 35,  75 => 21,  71 => 19,  63 => 15,  58 => 13,  55 => 12,  52 => 11,  42 => 4,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -171,7 +170,7 @@ class __TwigTemplate_fdec45916b59d539f7d608df30e96a759f82994bad9db67749f112d08cb
         return new Source("<div class=\"container\">
     <div class=\"row\">
         <div class=\"col-lg-8 breadcrumbf\">
-            <a href=\"/dobro\">Главная</a> <span class=\"diviver\">&gt;</span>  <a href=\"#\">Новая тема</a>
+            <a href=\"{{ url('/') }}\">Главная</a> <span class=\"diviver\">&gt;</span>  <a href=\"#\">Новая тема</a>
         </div>
     </div>
 </div>
@@ -233,15 +232,11 @@ class __TwigTemplate_fdec45916b59d539f7d608df30e96a759f82994bad9db67749f112d08cb
                         <div class=\"clearfix\"></div>
                     </div>                              
                     <div class=\"postinfobot\">
-
-                       
                         <div class=\"pull-right postreply\">
                             <div class=\"pull-left smile\"><a href=\"#\"><i class=\"fa fa-smile-o\"></i></a></div>
                             <div class=\"pull-left\"><button type=\"submit\" class=\"btn btn-primary\">Опубликовать</button></div>
                             <div class=\"clearfix\"></div>
                         </div>
-
-
                         <div class=\"clearfix\"></div>
                     </div>
                 {{ form_close() }}

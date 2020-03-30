@@ -51,7 +51,10 @@ class __TwigTemplate_b6c44a2628717117ef7fb2166dcc4e37453fc48da0578ac4f11ef4de877
             </div>
             <div class=\"col-lg-4 col-xs-12 col-sm-5 col-md-4 avt\">
                 <div class=\"stnt pull-left\">                            
-                    <form action=\"/dobro/new-topic\" method=\"post\" class=\"form\">
+                    <form action=\"";
+        // line 18
+        echo url("/");
+        echo "/new-topic\" method=\"post\" class=\"form\">
                         <button class=\"btn btn-primary\"><i class=\"fa fa-plus\" ></i> Начать новую тему</button>
                     </form>
                 </div>
@@ -68,9 +71,14 @@ class __TwigTemplate_b6c44a2628717117ef7fb2166dcc4e37453fc48da0578ac4f11ef4de877
         return "/var/www/html/dobro/themes/dobro/partials/site/header.htm";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  37 => 1,);
+        return array (  56 => 18,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -92,7 +100,7 @@ class __TwigTemplate_b6c44a2628717117ef7fb2166dcc4e37453fc48da0578ac4f11ef4de877
             </div>
             <div class=\"col-lg-4 col-xs-12 col-sm-5 col-md-4 avt\">
                 <div class=\"stnt pull-left\">                            
-                    <form action=\"/dobro/new-topic\" method=\"post\" class=\"form\">
+                    <form action=\"{{ url('/') }}/new-topic\" method=\"post\" class=\"form\">
                         <button class=\"btn btn-primary\"><i class=\"fa fa-plus\" ></i> Начать новую тему</button>
                     </form>
                 </div>

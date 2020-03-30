@@ -1,7 +1,7 @@
 <?php 
 use Elaman\Dobro\Models\Post;
 use Elaman\Dobro\Models\PostCategory;
-class Cms5e7d0e1a45361441248517_beec74bde95137380e74d4f1bf2c81e9Class extends Cms\Classes\PageCode
+class Cms5e7fadfd58a8a629960369_73d7a822d63578d9021e82a8fff0ac43Class extends Cms\Classes\PageCode
 {
       public function onStart(){
       
@@ -33,13 +33,12 @@ public function onSubmit(){
               $comm->title = Input::get('title');
               $comm->content = Input::get('content');
               $comm->slug = str_slug(Input::get('title'));
-  			  $comm->author = Input::get('author');
-  			  $comm->phone = Input::get('phone');
-  			  $comm->address = Input::get('address');	
+  			      $comm->author = Input::get('author');
+  			      $comm->phone = Input::get('phone');
+  			      $comm->address = Input::get('address');	
               $comm->save();
                
                return Redirect::to('/');
-              //return Redirect::to('/rezervasyon/basarili');
               
            }
    }

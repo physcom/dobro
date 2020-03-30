@@ -53,10 +53,13 @@ class __TwigTemplate_7f9af520a4c0c7a78f3171c572b18664e877bc8c69a5a6a4fb9eaa23c9c
             <div class=\"tp-banner-container\">
                 <div class=\"tp-banner\" >
                     <!-- MAIN IMAGE -->
-                    <img src=\"";
+                    <a href=\"";
         // line 15
+        echo url("/");
+        echo "\"><img src=\"";
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/slide.jpg");
-        echo "\"  alt=\"slidebg1\"  class=\"img-responsive\" style=\"width: 100%;\"> 
+        echo "\"  alt=\"slidebg1\"  class=\"img-responsive\" style=\"width: 100%;\"></a>
+                    <div class=\"centered\"><h1>Вместе Мы Сила</h1></div> 
 
                 </div>
 
@@ -67,39 +70,39 @@ class __TwigTemplate_7f9af520a4c0c7a78f3171c572b18664e877bc8c69a5a6a4fb9eaa23c9c
         <!-- Header -->
         <header id=\"layout-header\">
             ";
-        // line 25
+        // line 26
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/header"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 26
+        // line 27
         echo "        </header>
 
         <!-- Content -->
         <section class=\"content\">
             ";
-        // line 30
-        echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
         // line 31
+        echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
+        // line 32
         echo "        </section>
 
         <!-- Footer -->
         <footer id=\"layout-footer\">
             ";
-        // line 35
+        // line 36
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/footer"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 36
+        // line 37
         echo "        </footer>
 
         <!-- core JS -->
         <script src=\"";
-        // line 39
+        // line 40
         echo $this->extensions['Cms\Twig\Extension']->themeFilter([0 => "assets/js/jquery.js", 1 => "assets/rs-plugin/js/jquery.themepunch.plugins.min.js", 2 => "assets/rs-plugin/js/jquery.themepunch.revolution.min.js", 3 => "assets/js/bootstrap.min.js", 4 => "assets/js/sharer.js", 5 => "assets/sweetalert/sweetalert.min.js"]);
-        // line 47
+        // line 48
         echo "\"></script>
         ";
-        // line 48
+        // line 49
         $_minify = System\Classes\CombineAssets::instance()->useMinify;
         if ($_minify) {
             echo '<script src="' . Request::getBasePath() . '/modules/system/assets/js/framework.combined-min.js"></script>'.PHP_EOL;
@@ -110,11 +113,11 @@ class __TwigTemplate_7f9af520a4c0c7a78f3171c572b18664e877bc8c69a5a6a4fb9eaa23c9c
         }
         echo '<link rel="stylesheet" property="stylesheet" href="' . Request::getBasePath() .'/modules/system/assets/css/framework.extras'.($_minify ? '-min' : '').'.css">'.PHP_EOL;
         unset($_minify);
-        // line 49
+        // line 50
         echo "        ";
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('js');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('scripts');
-        // line 50
+        // line 51
         echo "
         
 
@@ -136,7 +139,7 @@ class __TwigTemplate_7f9af520a4c0c7a78f3171c572b18664e877bc8c69a5a6a4fb9eaa23c9c
 
     public function getDebugInfo()
     {
-        return array (  118 => 50,  114 => 49,  103 => 48,  100 => 47,  98 => 39,  93 => 36,  89 => 35,  83 => 31,  81 => 30,  75 => 26,  71 => 25,  58 => 15,  47 => 6,  43 => 5,  37 => 1,);
+        return array (  121 => 51,  117 => 50,  106 => 49,  103 => 48,  101 => 40,  96 => 37,  92 => 36,  86 => 32,  84 => 31,  78 => 27,  74 => 26,  58 => 15,  47 => 6,  43 => 5,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -155,7 +158,8 @@ class __TwigTemplate_7f9af520a4c0c7a78f3171c572b18664e877bc8c69a5a6a4fb9eaa23c9c
             <div class=\"tp-banner-container\">
                 <div class=\"tp-banner\" >
                     <!-- MAIN IMAGE -->
-                    <img src=\"{{'assets/images/slide.jpg'|theme}}\"  alt=\"slidebg1\"  class=\"img-responsive\" style=\"width: 100%;\"> 
+                    <a href=\"{{ url('/') }}\"><img src=\"{{'assets/images/slide.jpg'|theme}}\"  alt=\"slidebg1\"  class=\"img-responsive\" style=\"width: 100%;\"></a>
+                    <div class=\"centered\"><h1>Вместе Мы Сила</h1></div> 
 
                 </div>
 

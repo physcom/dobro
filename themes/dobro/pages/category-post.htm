@@ -18,7 +18,7 @@ layout = "default"
 <div class="container">
     <div class="row">
         <div class="col-lg-8 breadcrumbf">
-            <a href="/dobro">Главная</a> <span class="diviver">&gt;</span>  <a href="#">{{category.title}}</a>
+            <a href="{{ url('/') }}">Главная</a> <span class="diviver">&gt;</span>  <a href="#">{{category.title}}</a>
         </div>
     </div>
 </div>
@@ -107,7 +107,7 @@ layout = "default"
                 <div class="blocktxt">
                     <ul class="cats">
                         {% for category in categories %}
-                            <li><a href="/dobro/category-posts/{{category.id}}">{{ category.title}} <span class="badge pull-right">{{category.getPostCount}}</span></a></li>
+                            <li><a href="{{ url('/') }}/category-posts/{{category.id}}">{{ category.title}} <span class="badge pull-right">{{category.getPostCount}}</span></a></li>
                         {% endfor %}
                     
                     </ul>

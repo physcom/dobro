@@ -29,7 +29,7 @@ layout = "default"
                         </div>
                         <div class="posttext pull-right">
                             <h2>
-                                <a href="/post/{{post.id}}">{{post.title}}</a>
+                                <a href="{{ url('/') }}/post/{{post.id}}">{{post.title}}</a>
                             </h2>
                             <p>{{post.content|raw}}</p>
                         </div>
@@ -54,11 +54,16 @@ layout = "default"
                         </div>
                         <div class="posted pull-left"><i class="fa fa-map-marker"></i> {{post.getCategoryTitle}}</div>
 
-                        <div class="next pull-right">                                        
-                            <a href="#" class="sharer" data-sharer="facebook" data-url="http://localhost/dobro/post/{{post.id}}"> 
+                        <div class="next pull-right">   
+                            <!-- Your share button code -->
+                            <div class="fb-share-button" 
+                              data-href="https://dobro.kundoluk.kg/post/{{post.id}}" 
+                              data-layout="button_count">
+                            </div>                                     
+                            <!-- <a href="#" class="sharer facebook" data-sharer="facebook" data-url="https://dobro.kundoluk.kg/{{post.id}}"> 
                                 <i class="fa fa-facebook-square " ></i>
-                            </a>
-                            <a href="#" class="sharer" data-sharer="whatsapp" data-url="http://localhost/dobro/post/{{post.id}}"> 
+                            </a> -->
+                            <a href="#" class="sharer whatsapp" data-sharer="whatsapp" data-url="https://dobro.kundoluk.kg/post/{{post.id}}"> 
                                 <i class="fa fa-whatsapp" ></i>
                             </a>
                         
@@ -99,7 +104,7 @@ layout = "default"
                 <div class="blocktxt">
                     <ul class="cats">
                         {% for category in categories %}
-                            <li><a href="/category-posts/{{category.id}}">{{ category.title}} <span class="badge pull-right">{{category.getPostCount}}</span></a></li>
+                            <li><a href="{{ url('/') }}/category-posts/{{category.id}}">{{ category.title}} <span class="badge pull-right">{{category.getPostCount}}</span></a></li>
                         {% endfor %}
                     
                     </ul>

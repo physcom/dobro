@@ -2,7 +2,7 @@
 use Elaman\Dobro\Models\Post;
 use Elaman\Dobro\Models\PostCategory;
 use Elaman\Dobro\Models\PostComment;
-class Cms5e7d0e50ca543470455742_aa20e897c9917966d54433d2fccd520dClass extends Cms\Classes\PageCode
+class Cms5e82017c524fb956497049_1e27ab0a33712e7f1bcfdb79c02cf24bClass extends Cms\Classes\PageCode
 {
          public function onStart(){
        $post = Post::where('id',$this->param('id'))->with('comments')->first();

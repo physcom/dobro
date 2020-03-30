@@ -1,4 +1,4 @@
-1585386963a:1:{s:8:"post.htm";a:8:{s:8:"fileName";s:8:"post.htm";s:7:"content";s:8382:"title = "Post"
+1585578964a:1:{s:8:"post.htm";a:8:{s:8:"fileName";s:8:"post.htm";s:7:"content";s:8410:"title = "Тема"
 url = "/post/:id"
 layout = "default"
 ==
@@ -87,7 +87,7 @@ layout = "default"
 <div class="container">
     <div class="row">
         <div class="col-lg-8 breadcrumbf">
-            <a href="/dobro">Главная</a> <span class="diviver">&gt;</span>  <a href="#">Детали темы</a>
+            <a href="{{ url('/') }}">Главная</a> <span class="diviver">&gt;</span>  <a href="#">Детали темы</a>
         </div>
     </div>
 </div>
@@ -128,12 +128,15 @@ layout = "default"
                     <div class="posted pull-left"><i class="fa fa-clock-o"></i> Опубликовано : {{post.created_at|date("d.m.Y H:m")}}</div>
 
                     <div class="next pull-right">                                        
-                        <a href="#" class="sharer" data-sharer="facebook" data-url="http://localhost/dobro/post/{{post.id}}"> 
+                        <a href="#" class="sharer" data-sharer="facebook" data-url="{{ url('/') }}/post/{{post.id}}"> 
                                 <i class="fa fa-facebook-square " ></i>
                         </a>
-                        <a href="#" class="sharer" data-sharer="whatsapp" data-url="http://localhost/dobro/post/{{post.id}}"> 
+                        
+                        <a href="#" class="sharer" data-sharer="whatsapp" data-url="{{ url('/') }}/post/{{post.id}}"> 
                             <i class="fa fa-whatsapp" ></i>
                         </a>
+                        
+
                     </div>
 
                     <div class="clearfix"></div>
@@ -150,7 +153,6 @@ layout = "default"
                     <div class="userinfo pull-left">
                         <div class="avatar">
                             <img src="{{'assets/images/avatar2.jpg'|theme}}" alt="" />
-                          
                         </div>
 
                         <div class="icons">
@@ -215,7 +217,7 @@ layout = "default"
                 <div class="blocktxt">
                     <ul class="cats">
                         {% for category in categories %}
-                            <li><a href="/dobro/category-posts/{{category.id}}">{{ category.title}} <span class="badge pull-right">{{category.getPostCount}}</span></a></li>
+                            <li><a href="{{ url('/') }}/category-posts/{{category.id}}">{{ category.title}} <span class="badge pull-right">{{category.getPostCount}}</span></a></li>
                         {% endfor %}
                     
                     </ul>
@@ -223,7 +225,7 @@ layout = "default"
             </div>
         </div>
     </div>
-</div>";s:5:"mtime";i:1585253953;s:6:"markup";s:7015:"<script type="text/javascript">
+</div>";s:5:"mtime";i:1585578341;s:6:"markup";s:7039:"<script type="text/javascript">
   
   function upVote(post_id){
     console.log("Post id ", post_id);
@@ -260,7 +262,7 @@ layout = "default"
 <div class="container">
     <div class="row">
         <div class="col-lg-8 breadcrumbf">
-            <a href="/dobro">Главная</a> <span class="diviver">&gt;</span>  <a href="#">Детали темы</a>
+            <a href="{{ url('/') }}">Главная</a> <span class="diviver">&gt;</span>  <a href="#">Детали темы</a>
         </div>
     </div>
 </div>
@@ -301,12 +303,15 @@ layout = "default"
                     <div class="posted pull-left"><i class="fa fa-clock-o"></i> Опубликовано : {{post.created_at|date("d.m.Y H:m")}}</div>
 
                     <div class="next pull-right">                                        
-                        <a href="#" class="sharer" data-sharer="facebook" data-url="http://localhost/dobro/post/{{post.id}}"> 
+                        <a href="#" class="sharer" data-sharer="facebook" data-url="{{ url('/') }}/post/{{post.id}}"> 
                                 <i class="fa fa-facebook-square " ></i>
                         </a>
-                        <a href="#" class="sharer" data-sharer="whatsapp" data-url="http://localhost/dobro/post/{{post.id}}"> 
+                        
+                        <a href="#" class="sharer" data-sharer="whatsapp" data-url="{{ url('/') }}/post/{{post.id}}"> 
                             <i class="fa fa-whatsapp" ></i>
                         </a>
+                        
+
                     </div>
 
                     <div class="clearfix"></div>
@@ -323,7 +328,6 @@ layout = "default"
                     <div class="userinfo pull-left">
                         <div class="avatar">
                             <img src="{{'assets/images/avatar2.jpg'|theme}}" alt="" />
-                          
                         </div>
 
                         <div class="icons">
@@ -388,7 +392,7 @@ layout = "default"
                 <div class="blocktxt">
                     <ul class="cats">
                         {% for category in categories %}
-                            <li><a href="/dobro/category-posts/{{category.id}}">{{ category.title}} <span class="badge pull-right">{{category.getPostCount}}</span></a></li>
+                            <li><a href="{{ url('/') }}/category-posts/{{category.id}}">{{ category.title}} <span class="badge pull-right">{{category.getPostCount}}</span></a></li>
                         {% endfor %}
                     
                     </ul>
@@ -439,4 +443,4 @@ layout = "default"
                
             return Redirect::to('/post/'.$this->param('id'));               
         }
-   } ";s:5:"title";s:4:"Post";s:3:"url";s:9:"/post/:id";s:6:"layout";s:7:"default";}}
+   } ";s:5:"title";s:8:"Тема";s:3:"url";s:9:"/post/:id";s:6:"layout";s:7:"default";}}

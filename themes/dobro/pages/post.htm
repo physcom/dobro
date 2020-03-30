@@ -87,7 +87,7 @@ layout = "default"
 <div class="container">
     <div class="row">
         <div class="col-lg-8 breadcrumbf">
-            <a href="/">Главная</a> <span class="diviver">&gt;</span>  <a href="#">Детали темы</a>
+            <a href="{{ url('/') }}">Главная</a> <span class="diviver">&gt;</span>  <a href="#">Детали темы</a>
         </div>
     </div>
 </div>
@@ -128,12 +128,15 @@ layout = "default"
                     <div class="posted pull-left"><i class="fa fa-clock-o"></i> Опубликовано : {{post.created_at|date("d.m.Y H:m")}}</div>
 
                     <div class="next pull-right">                                        
-                        <a href="#" class="sharer" data-sharer="facebook" data-url="https://dobro.kundoluk.kg/post/{{post.id}}"> 
+                        <a href="#" class="sharer" data-sharer="facebook" data-url="{{ url('/') }}/post/{{post.id}}"> 
                                 <i class="fa fa-facebook-square " ></i>
                         </a>
-                        <a href="#" class="sharer" data-sharer="whatsapp" data-url="https://dobro.kundoluk.kg/post/{{post.id}}"> 
+                        
+                        <a href="#" class="sharer" data-sharer="whatsapp" data-url="{{ url('/') }}/post/{{post.id}}"> 
                             <i class="fa fa-whatsapp" ></i>
                         </a>
+                        
+
                     </div>
 
                     <div class="clearfix"></div>
@@ -214,7 +217,7 @@ layout = "default"
                 <div class="blocktxt">
                     <ul class="cats">
                         {% for category in categories %}
-                            <li><a href="/category-posts/{{category.id}}">{{ category.title}} <span class="badge pull-right">{{category.getPostCount}}</span></a></li>
+                            <li><a href="{{ url('/') }}/category-posts/{{category.id}}">{{ category.title}} <span class="badge pull-right">{{category.getPostCount}}</span></a></li>
                         {% endfor %}
                     
                     </ul>

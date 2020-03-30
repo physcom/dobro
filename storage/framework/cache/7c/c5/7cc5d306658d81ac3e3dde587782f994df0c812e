@@ -1,4 +1,4 @@
-1585386963a:1:{s:13:"new-topic.htm";a:9:{s:8:"fileName";s:13:"new-topic.htm";s:7:"content";s:5187:"title = "Create new topic"
+1585578744a:1:{s:13:"new-topic.htm";a:9:{s:8:"fileName";s:13:"new-topic.htm";s:7:"content";s:5118:"title = "Create new topic"
 url = "/new-topic"
 layout = "default"
 is_hidden = 0
@@ -38,13 +38,12 @@ is_hidden = 0
               $comm->title = Input::get('title');
               $comm->content = Input::get('content');
               $comm->slug = str_slug(Input::get('title'));
-  			  $comm->author = Input::get('author');
-  			  $comm->phone = Input::get('phone');
-  			  $comm->address = Input::get('address');	
+  			      $comm->author = Input::get('author');
+  			      $comm->phone = Input::get('phone');
+  			      $comm->address = Input::get('address');	
               $comm->save();
                
                return Redirect::to('/');
-              //return Redirect::to('/rezervasyon/basarili');
               
            }
    }
@@ -53,7 +52,7 @@ is_hidden = 0
  <div class="container">
     <div class="row">
         <div class="col-lg-8 breadcrumbf">
-            <a href="/dobro">Главная</a> <span class="diviver">&gt;</span>  <a href="#">Новая тема</a>
+            <a href="{{ url('/') }}">Главная</a> <span class="diviver">&gt;</span>  <a href="#">Новая тема</a>
         </div>
     </div>
 </div>
@@ -115,15 +114,11 @@ is_hidden = 0
                         <div class="clearfix"></div>
                     </div>                              
                     <div class="postinfobot">
-
-                       
                         <div class="pull-right postreply">
                             <div class="pull-left smile"><a href="#"><i class="fa fa-smile-o"></i></a></div>
                             <div class="pull-left"><button type="submit" class="btn btn-primary">Опубликовать</button></div>
                             <div class="clearfix"></div>
                         </div>
-
-
                         <div class="clearfix"></div>
                     </div>
                 {{ form_close() }}
@@ -131,10 +126,10 @@ is_hidden = 0
         </div>
     </div>
 </div>	
-";s:5:"mtime";i:1585253908;s:6:"markup";s:3583:"<div class="container">
+";s:5:"mtime";i:1585425857;s:6:"markup";s:3564:"<div class="container">
     <div class="row">
         <div class="col-lg-8 breadcrumbf">
-            <a href="/dobro">Главная</a> <span class="diviver">&gt;</span>  <a href="#">Новая тема</a>
+            <a href="{{ url('/') }}">Главная</a> <span class="diviver">&gt;</span>  <a href="#">Новая тема</a>
         </div>
     </div>
 </div>
@@ -196,22 +191,18 @@ is_hidden = 0
                         <div class="clearfix"></div>
                     </div>                              
                     <div class="postinfobot">
-
-                       
                         <div class="pull-right postreply">
                             <div class="pull-left smile"><a href="#"><i class="fa fa-smile-o"></i></a></div>
                             <div class="pull-left"><button type="submit" class="btn btn-primary">Опубликовать</button></div>
                             <div class="clearfix"></div>
                         </div>
-
-
                         <div class="clearfix"></div>
                     </div>
                 {{ form_close() }}
             </div><!-- POST -->
         </div>
     </div>
-</div>";s:4:"code";s:1507:"   use Elaman\Dobro\Models\Post;
+</div>";s:4:"code";s:1457:"   use Elaman\Dobro\Models\Post;
    use Elaman\Dobro\Models\PostCategory;
    
       function onStart(){
@@ -245,13 +236,12 @@ is_hidden = 0
               $comm->title = Input::get('title');
               $comm->content = Input::get('content');
               $comm->slug = str_slug(Input::get('title'));
-  			  $comm->author = Input::get('author');
-  			  $comm->phone = Input::get('phone');
-  			  $comm->address = Input::get('address');	
+  			      $comm->author = Input::get('author');
+  			      $comm->phone = Input::get('phone');
+  			      $comm->address = Input::get('address');	
               $comm->save();
                
                return Redirect::to('/');
-              //return Redirect::to('/rezervasyon/basarili');
               
            }
    }

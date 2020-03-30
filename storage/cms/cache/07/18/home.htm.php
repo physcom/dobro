@@ -1,7 +1,7 @@
 <?php 
 use Elaman\Dobro\Models\Post;
 use Elaman\Dobro\Models\PostCategory;
-class Cms5e7f15a6900c1586931628_8b799d1e166ae03b6dd48f280359e505Class extends Cms\Classes\PageCode
+class Cms5e82017fa9794661075876_c4284bd4cc3d91c5580e8fe6f68de6ffClass extends Cms\Classes\PageCode
 {
       public function onStart(){
        $this['posts'] = Post::orderBy('created_at', 'desc')->paginate(2);
