@@ -1,12 +1,12 @@
 <?php 
-class Cms5e856175241ca681346715_d773ab964038aad908647281bf62b393Class extends Cms\Classes\LayoutCode
+class Cms5e862253265ba153597596_7a6a2f4613100268fc1c520ac4d504d1Class extends Cms\Classes\LayoutCode
 {
 public function onLogout()
-{
-   
+    {
+       
 
-    $this->session->onLogout();
+        $this->session->onLogout();
 
-    return Redirect::to("/");
-}     
+        return Redirect::to("/");
+    }     
 }

@@ -1,18 +1,19 @@
-1585838508a:1:{s:11:"default.htm";a:7:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:1604:"description = "Default layout"
+1585858744a:1:{s:11:"default.htm";a:7:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:1629:"description = "Default layout"
 
 [session]
 security = "all"
 ==
 <?php 
 
-function onLogout()
-{
-   
 
-    $this->session->onLogout();
+    function onLogout()
+    {
+       
 
-    return Redirect::to("/");
-}     
+        $this->session->onLogout();
+
+        return Redirect::to("/");
+    }     
 ?>
 ==
 <!DOCTYPE html>
@@ -72,7 +73,7 @@ function onLogout()
 
     </body>
 </html>
-";s:5:"mtime";i:1585799501;s:6:"markup";s:1430:"<!DOCTYPE html>
+";s:5:"mtime";i:1585848912;s:6:"markup";s:1430:"<!DOCTYPE html>
 <html>
     
     <head>
@@ -128,13 +129,14 @@ function onLogout()
         </div>
 
     </body>
-</html>";s:4:"code";s:99:" 
+</html>";s:4:"code";s:124:" 
 
-function onLogout()
-{
-   
 
-    $this->session->onLogout();
+    function onLogout()
+    {
+       
 
-    return Redirect::to("/");
-}     ";s:11:"description";s:14:"Default layout";s:7:"session";a:1:{s:8:"security";s:3:"all";}}}
+        $this->session->onLogout();
+
+        return Redirect::to("/");
+    }     ";s:11:"description";s:14:"Default layout";s:7:"session";a:1:{s:8:"security";s:3:"all";}}}

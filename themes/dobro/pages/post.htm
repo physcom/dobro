@@ -17,6 +17,7 @@ layout = "default"
        
        $this['post'] = $post; 
        $this['categories'] = PostCategory::get();
+      
     }
 
     function onSubmitComment(){
@@ -46,7 +47,24 @@ layout = "default"
                
             return Redirect::to('/post/'.$this->param('id'));               
         }
-   } 
+    } 
+
+    function onApproveDonate(){
+        
+    
+      $post = Post::findOrFail($this->param('id'));
+        
+      if(Auth::getUser())
+        {
+             $post->user_id = Auth::getUser()->id;
+             $post->approved = true;
+
+        } 
+      $post->save();
+               
+      return Redirect::to('/post/'.$this->param('id'));               
+        
+    } 
 
 ?>
 ==
@@ -55,12 +73,12 @@ layout = "default"
   function upVote(post_id){
     console.log("Post id ", post_id);
     swal({
-      title: "Are you sure?",
-      text: "You are going to upvo!",
+      title: "Вы уверены?",
+      text: "Вы собираетесь поднять голос!",
       type: "info",
       showCancelButton: true,
       confirmButtonClass: "btn-success",
-      confirmButtonText: "Yes, upvote!",
+      confirmButtonText: "Да",
       closeOnConfirm: false
     },
     function(){
@@ -87,12 +105,12 @@ layout = "default"
   function approveHelp(post_id, user_id){
     console.log("Post id ", post_id);
     swal({
-      title: "Are you sure?",
-      text: "You are going to approve Help!",
+      title: "Вы уверены?",
+      text: "Вы собираетесь одобрить!",
       type: "info",
       showCancelButton: true,
       confirmButtonClass: "btn-success",
-      confirmButtonText: "Yes, approve!",
+      confirmButtonText: "Да",
       closeOnConfirm: false
     },
     function(){
@@ -104,7 +122,7 @@ layout = "default"
           },
           function(data, status){
                 if(status == "success"){
-                  swal("Успешно", "Upvote", "success");
+                  swal("Успешно", "Одобренный", "success");
                   location.reload();
                   //window.location.href = "/medicine";
                 }
@@ -124,8 +142,13 @@ layout = "default"
         </div>
     </div>
 </div>
-{% if user %}
-<button class="btn btn-success donate" onclick="approveHelp({{post.id}}, {{user.id}})">Donate {{user.name}} <i class="fa fa-gift" aria-hidden="true"></i></button>
+{% if user and post.approved == 0 %}
+    
+    {{ form_ajax('onApproveDonate',{ class: 'form'}) }}
+        <input type="hidden" name="author_id" value="{{user.id}}">
+        <button class="btn btn-success donate" type="submit" >Donate, {{user.name}} <i class="fa fa-gift" aria-hidden="true"></i></button>
+    {{ form_close() }}
+    <!-- <button class="btn btn-success donate" onclick="approveHelp({{post.id}}, {{user.id}})">Donate, {{user.name}} <i class="fa fa-gift" aria-hidden="true"></i></button> -->
 {% endif %}
 <div class="container">
     <div class="row">
@@ -144,7 +167,9 @@ layout = "default"
                         </div>
                     </div>
                     <div class="posttext pull-right">
-                        <h2>{{post.title}}</h2>
+                        <h2>{{post.title}} {% if post.approved %}
+                                     <i class="fa fa-check-circle approved"></i>
+                                    {% endif %}</h2>
                         <p>
                             {{post.content}}
                         </p>

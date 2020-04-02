@@ -1,0 +1,60 @@
+title = "Добро"
+url = "/fonds"
+layout = "default"
+==
+<?php
+   use Elaman\Dobro\Models\Post;
+       
+   function onStart(){
+       $this['posts'] = Post::with('user')->where('approved',true)->orderBy('created_at', 'desc')->paginate(2);
+   }
+
+?>
+==
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-8">
+            <div class="table-responsive">
+                <table class="data table table-striped no-margin">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Дата</th>
+                            <th>Имя</th>
+                            <th>Тема</th>
+                            <th>Фонд</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                         {% for post in posts %}
+                        <tr>
+                        <td>{{post.updated_at|date("d.m.Y")}}</td>
+                        <td>{{post.author}}</td>
+                        <td>{{post.title}}</td>
+                        <td class="hidden-phone">
+                           <span class="badge badge-info">{{post.user.name}}</span>
+                        </td>
+                       
+                        </tr>
+                         {% endfor %}  
+                    </tbody>
+                </table>
+                
+            </div>
+
+        </div>
+        
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6" style="margin:20px 0;">
+              Записи с {{ posts.currentPage  }} до {{ posts.count * posts.currentPage }} из {{ posts.total }} записей
+        </div>
+          <div class="col-md-6">
+                {{ posts.render|raw }}
+          </div>
+    </div>
+</div>
+

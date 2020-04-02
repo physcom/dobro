@@ -1,4 +1,4 @@
-1585819095a:1:{s:9:"login.htm";a:7:{s:8:"fileName";s:9:"login.htm";s:7:"content";s:2201:"description = "Login layout"
+1585856257a:1:{s:9:"login.htm";a:7:{s:8:"fileName";s:9:"login.htm";s:7:"content";s:2838:"description = "Login layout"
 
 [session]
 security = "all"
@@ -9,7 +9,15 @@ security = "all"
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{'assets/favicons/apple-touch-icon.png'|theme}}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{'assets/favicons/favicon-32x32.png'|theme}}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{'assets/favicons/favicon-16x16.png'|theme}}">
+        <link rel="manifest" href="{{'assets/favicons/site.webmanifest'|theme}}">
+        <link rel="mask-icon" href="{{'assets/favicons/safari-pinned-tab.svg'|theme}}" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
         
         <!-- made by www.metatags.org -->
         <meta name="description" content="" />
@@ -76,12 +84,20 @@ security = "all"
 
     </body>
 </html>
-";s:5:"mtime";i:1585801225;s:6:"markup";s:2139:"<!DOCTYPE html>
+";s:5:"mtime";i:1585849068;s:6:"markup";s:2776:"<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{'assets/favicons/apple-touch-icon.png'|theme}}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{'assets/favicons/favicon-32x32.png'|theme}}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{'assets/favicons/favicon-16x16.png'|theme}}">
+        <link rel="manifest" href="{{'assets/favicons/site.webmanifest'|theme}}">
+        <link rel="mask-icon" href="{{'assets/favicons/safari-pinned-tab.svg'|theme}}" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
         
         <!-- made by www.metatags.org -->
         <meta name="description" content="" />

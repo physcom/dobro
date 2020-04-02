@@ -10,14 +10,8 @@ forceSecure = 0
         <div class="row">
             
             
-            <div class="col-lg-4 search hidden-xs hidden-sm col-md-3">
-                <div class="wrap">
-                    <form action="#" method="post" class="form">
-                        <div class="pull-left txt"><input type="text" class="form-control" placeholder="Поиск по темам"></div>
-                        <div class="pull-right"><button class="btn btn-default" type="button"><i class="fa fa-search"></i></button></div>
-                        <div class="clearfix"></div>
-                    </form>
-                </div>
+            <div class="col-lg-4 search col-md-3">
+                <a href="{{ url('/') }}/fonds" class="btn btn-success"><i class="fa fa-gift" ></i> Фонды</a>
             </div>
             <div class="col-lg-4 col-xs-12 col-sm-5 col-md-4 avt">
                 <div class="stnt pull-left">                            
@@ -25,6 +19,7 @@ forceSecure = 0
                         <button class="btn btn-primary"><i class="fa fa-plus" ></i> Начать новую тему</button>
                     </form>
                 </div>
+               
                 <div class="env pull-left"><i class="fa fa-envelope"></i></div>
 
                 <div class="avatar pull-left dropdown">
@@ -44,6 +39,7 @@ forceSecure = 0
                                     <span>Добро пожаловать, {{ user.name}}!</span>
                                 </a>
                              </li>
+                             <br>
                               <li role="presentation">
                                 <a role="menuitem" tabindex="-3" data-request="onLogout" data-request-data="redirect: '/'">
                                 <i class="fa fa-sign-out"></i> Выйти </a>

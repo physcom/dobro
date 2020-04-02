@@ -2,7 +2,7 @@
 use Elaman\Dobro\Models\Post;
 use Elaman\Dobro\Models\PostCategory;
 use Elaman\Dobro\Models\PostComment;
-class Cms5e85f7e02aec9170695736_dbea796b62413c7f1512f2f8009e11b2Class extends Cms\Classes\PageCode
+class Cms5e8626cb02284789312029_cfbafa1f4d57debb901cd7fcfdf9eac3Class extends Cms\Classes\PageCode
 {
          public function onStart(){
        $post = Post::where('id',$this->param('id'))->with('comments')->first();
@@ -14,6 +14,7 @@ class Cms5e85f7e02aec9170695736_dbea796b62413c7f1512f2f8009e11b2Class extends Cm
        
        $this['post'] = $post; 
        $this['categories'] = PostCategory::get();
+      
     }
 public function onSubmitComment(){
          $rules = [
@@ -42,5 +43,21 @@ public function onSubmitComment(){
                
             return Redirect::to('/post/'.$this->param('id'));               
         }
-   } 
+    } 
+public function onApproveDonate(){
+        
+    
+      $post = Post::findOrFail($this->param('id'));
+        
+      if(Auth::getUser())
+        {
+             $post->user_id = Auth::getUser()->id;
+             $post->approved = true;
+
+        } 
+      $post->save();
+               
+      return Redirect::to('/post/'.$this->param('id'));               
+        
+    } 
 }

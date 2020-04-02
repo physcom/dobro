@@ -1,0 +1,77 @@
+description = "Profile layout"
+
+[session]
+security = "user"
+redirect = "login"
+
+==
+<?php 
+
+
+    function onLogout()
+    {
+       
+
+        $this->session->onLogout();
+
+        return Redirect::to("/");
+    }     
+?>
+==
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        {% partial 'meta' %}
+    </head>
+    <body>
+            
+        <div class="container-fluid">  
+
+            <!-- Slider -->
+            <div class="tp-banner-container">
+                <div class="tp-banner" >
+                    <!-- MAIN IMAGE -->
+                    <a href="{{ url('/') }}"><img src="{{'assets/images/slide.jpg'|theme}}"  alt="slidebg1"  class="img-responsive" style="width: 100%;"></a>
+                    <div class="centered"><h1>Вместе Мы Сила</h1></div> 
+
+                </div>
+
+            </div>
+            <!-- //Slider -->
+
+
+        <!-- Header -->
+        <header id="layout-header">
+            {% partial 'site/header' %}
+        </header>
+
+        <!-- Content -->
+        <section class="content">
+            {% page %}
+        </section>
+
+        <!-- Footer -->
+        <footer id="layout-footer">
+            {% partial 'site/footer' %}
+        </footer>
+
+        <!-- core JS -->
+        <script src="{{ [
+          'assets/js/jquery.js',
+          'assets/rs-plugin/js/jquery.themepunch.plugins.min.js',
+          'assets/rs-plugin/js/jquery.themepunch.revolution.min.js',
+          'assets/js/bootstrap.min.js',
+          'assets/js/sharer.js',
+          'assets/sweetalert/sweetalert.min.js'
+
+        ] |theme }}"></script>
+        {% framework extras %}
+        {% scripts %}
+
+        
+
+        </div>
+
+    </body>
+</html>

@@ -5,14 +5,15 @@ security = "all"
 ==
 <?php 
 
-function onLogout()
-{
-   
 
-    $this->session->onLogout();
+    function onLogout()
+    {
+       
 
-    return Redirect::to("/");
-}     
+        $this->session->onLogout();
+
+        return Redirect::to("/");
+    }     
 ?>
 ==
 <!DOCTYPE html>
