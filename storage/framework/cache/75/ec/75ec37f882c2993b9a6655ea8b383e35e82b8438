@@ -1,4 +1,4 @@
-1585580432a:1:{s:8:"post.htm";a:8:{s:8:"fileName";s:8:"post.htm";s:7:"content";s:8410:"title = "Тема"
+1585838648a:1:{s:8:"post.htm";a:8:{s:8:"fileName";s:8:"post.htm";s:7:"content";s:9513:"title = "Тема"
 url = "/post/:id"
 layout = "default"
 ==
@@ -83,6 +83,39 @@ layout = "default"
           });
     });
   }
+
+  function approveHelp(post_id, user_id){
+    console.log("Post id ", post_id);
+    swal({
+      title: "Are you sure?",
+      text: "You are going to approve Help!",
+      type: "info",
+      showCancelButton: true,
+      confirmButtonClass: "btn-success",
+      confirmButtonText: "Yes, approve!",
+      closeOnConfirm: false
+    },
+    function(){
+        
+        $.post("approve-help",
+          {
+            post_id: post_id,
+            user_id: user_id
+          },
+          function(data, status){
+                if(status == "success"){
+                  swal("Успешно", "Upvote", "success");
+                  location.reload();
+                  //window.location.href = "/medicine";
+                }
+                else{
+                  swal("Cancelled", "Something Bad!", "error");
+                  location.reload();
+                  //window.location.href = "/medicine";
+                }
+          });
+    });
+  }
 </script> 
 <div class="container">
     <div class="row">
@@ -91,8 +124,9 @@ layout = "default"
         </div>
     </div>
 </div>
-
-
+{% if user %}
+<button class="btn btn-success donate" onclick="approveHelp({{post.id}}, {{user.id}})">Donate {{user.name}} <i class="fa fa-gift" aria-hidden="true"></i></button>
+{% endif %}
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-8">
@@ -120,12 +154,11 @@ layout = "default"
                 <div class="postinfobot">
 
                     <div class="likeblock pull-left">
-                        <button class="up" onclick="upVote('{{post.id}}')">
+                        <button class="up" onclick="upVote('{{post.id}}')" title="Up Vote">
                             <i class="fa fa-thumbs-o-up"></i>{{post.upvote_count}}
                         </button>
-                    
                     </div>
-                    <div class="posted pull-left"><i class="fa fa-clock-o"></i> Опубликовано : {{post.created_at|date("d.m.Y H:m")}}</div>
+                    <div class="posted pull-left"><i class="fa fa-clock-o"></i> {{post.created_at|date("d.m.Y H:m")}}</div>
 
                     <div class="next pull-right">                                        
                         <a href="#" class="sharer" data-sharer="facebook" data-url="{{ url('/') }}/post/{{post.id}}"> 
@@ -225,7 +258,7 @@ layout = "default"
             </div>
         </div>
     </div>
-</div>";s:5:"mtime";i:1585578341;s:6:"markup";s:7039:"<script type="text/javascript">
+</div>";s:5:"mtime";i:1585838045;s:6:"markup";s:8142:"<script type="text/javascript">
   
   function upVote(post_id){
     console.log("Post id ", post_id);
@@ -258,6 +291,39 @@ layout = "default"
           });
     });
   }
+
+  function approveHelp(post_id, user_id){
+    console.log("Post id ", post_id);
+    swal({
+      title: "Are you sure?",
+      text: "You are going to approve Help!",
+      type: "info",
+      showCancelButton: true,
+      confirmButtonClass: "btn-success",
+      confirmButtonText: "Yes, approve!",
+      closeOnConfirm: false
+    },
+    function(){
+        
+        $.post("approve-help",
+          {
+            post_id: post_id,
+            user_id: user_id
+          },
+          function(data, status){
+                if(status == "success"){
+                  swal("Успешно", "Upvote", "success");
+                  location.reload();
+                  //window.location.href = "/medicine";
+                }
+                else{
+                  swal("Cancelled", "Something Bad!", "error");
+                  location.reload();
+                  //window.location.href = "/medicine";
+                }
+          });
+    });
+  }
 </script> 
 <div class="container">
     <div class="row">
@@ -266,8 +332,9 @@ layout = "default"
         </div>
     </div>
 </div>
-
-
+{% if user %}
+<button class="btn btn-success donate" onclick="approveHelp({{post.id}}, {{user.id}})">Donate {{user.name}} <i class="fa fa-gift" aria-hidden="true"></i></button>
+{% endif %}
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-8">
@@ -295,12 +362,11 @@ layout = "default"
                 <div class="postinfobot">
 
                     <div class="likeblock pull-left">
-                        <button class="up" onclick="upVote('{{post.id}}')">
+                        <button class="up" onclick="upVote('{{post.id}}')" title="Up Vote">
                             <i class="fa fa-thumbs-o-up"></i>{{post.upvote_count}}
                         </button>
-                    
                     </div>
-                    <div class="posted pull-left"><i class="fa fa-clock-o"></i> Опубликовано : {{post.created_at|date("d.m.Y H:m")}}</div>
+                    <div class="posted pull-left"><i class="fa fa-clock-o"></i> {{post.created_at|date("d.m.Y H:m")}}</div>
 
                     <div class="next pull-right">                                        
                         <a href="#" class="sharer" data-sharer="facebook" data-url="{{ url('/') }}/post/{{post.id}}"> 

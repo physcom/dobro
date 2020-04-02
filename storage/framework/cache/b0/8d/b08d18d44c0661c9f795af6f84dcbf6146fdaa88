@@ -1,4 +1,10 @@
-1585580432a:1:{s:15:"site/header.htm";a:5:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:1207:"<!-- Nav -->
+1585838508a:1:{s:15:"site/header.htm";a:6:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:2968:"[account]
+redirect = "Home"
+paramCode = "code"
+forceSecure = 0
+==
+
+
 <div class="headernav">
     <div class="container">
         <div class="row">
@@ -19,14 +25,43 @@
                         <button class="btn btn-primary"><i class="fa fa-plus" ></i> Начать новую тему</button>
                     </form>
                 </div>
-                
+                <div class="env pull-left"><i class="fa fa-envelope"></i></div>
+
+                <div class="avatar pull-left dropdown">
+                    <a data-toggle="dropdown" href="#">
+                        {% if user.avatar.path %}
+                            <img alt="{{user.name}}" class="img-circle profile_img" src="{{ user.avatar.path }}" />
+                        {% else %}
+                            <img alt="" class="img-circle profile_img" src="{{'assets/images/avatar.jpg'|theme}}" />
+                        {% endif %}
+                      
+                    </a> <b class="caret"></b>
+                    <div class="status green">&nbsp;</div>
+                    <ul class="dropdown-menu" role="menu">
+                        {% if user %}
+                             <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="{{ url('/') }}/profile">
+                                    <span>Добро пожаловать, {{ user.name}}!</span>
+                                </a>
+                             </li>
+                              <li role="presentation">
+                                <a role="menuitem" tabindex="-3" data-request="onLogout" data-request-data="redirect: '/'">
+                                <i class="fa fa-sign-out"></i> Выйти </a>
+                              </li>
+                        {% else %}
+                            <li role="presentation"><a role="menuitem" tabindex="-4" href="{{ url('/') }}/login"><i class="fa fa-sign-in"></i> Login</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+                           
                 <div class="clearfix"></div>
             </div>
         </div>
     </div>
 </div>
-";s:5:"mtime";i:1585425913;s:6:"markup";s:1206:"<!-- Nav -->
-<div class="headernav">
+
+";s:5:"mtime";i:1585771942;s:6:"markup";s:2898:"<div class="headernav">
     <div class="container">
         <div class="row">
             
@@ -46,9 +81,38 @@
                         <button class="btn btn-primary"><i class="fa fa-plus" ></i> Начать новую тему</button>
                     </form>
                 </div>
-                
+                <div class="env pull-left"><i class="fa fa-envelope"></i></div>
+
+                <div class="avatar pull-left dropdown">
+                    <a data-toggle="dropdown" href="#">
+                        {% if user.avatar.path %}
+                            <img alt="{{user.name}}" class="img-circle profile_img" src="{{ user.avatar.path }}" />
+                        {% else %}
+                            <img alt="" class="img-circle profile_img" src="{{'assets/images/avatar.jpg'|theme}}" />
+                        {% endif %}
+                      
+                    </a> <b class="caret"></b>
+                    <div class="status green">&nbsp;</div>
+                    <ul class="dropdown-menu" role="menu">
+                        {% if user %}
+                             <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="{{ url('/') }}/profile">
+                                    <span>Добро пожаловать, {{ user.name}}!</span>
+                                </a>
+                             </li>
+                              <li role="presentation">
+                                <a role="menuitem" tabindex="-3" data-request="onLogout" data-request-data="redirect: '/'">
+                                <i class="fa fa-sign-out"></i> Выйти </a>
+                              </li>
+                        {% else %}
+                            <li role="presentation"><a role="menuitem" tabindex="-4" href="{{ url('/') }}/login"><i class="fa fa-sign-in"></i> Login</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+                           
                 <div class="clearfix"></div>
             </div>
         </div>
     </div>
-</div>";s:4:"code";N;}}
+</div>";s:4:"code";N;s:7:"account";a:3:{s:8:"redirect";s:4:"Home";s:9:"paramCode";s:4:"code";s:11:"forceSecure";s:1:"0";}}}

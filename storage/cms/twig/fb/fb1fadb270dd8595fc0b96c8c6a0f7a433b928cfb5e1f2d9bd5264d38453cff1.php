@@ -141,12 +141,12 @@ class __TwigTemplate_1586b6c5a8cec87575a39f94b98b6adcca5a516cf2098cdccc78fbe1902
 
 <link href=\"";
         // line 60
-        echo $this->extensions['Cms\Twig\Extension']->themeFilter([0 => "assets/css/bootstrap.min.css", 1 => "assets/css/custom.css", 2 => "assets/css/style.css", 3 => "assets/rs-plugin/css/settings.css", 4 => "assets/sweetalert/sweetalert.min.css"]);
-        // line 68
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter([0 => "assets/css/bootstrap.min.css", 1 => "assets/css/custom.css", 2 => "assets/css/style.css", 3 => "assets/rs-plugin/css/settings.css", 4 => "assets/animate.css/animate.min.css", 5 => "assets/sweetalert/sweetalert.min.css"]);
+        // line 70
         echo ".css\" rel=\"stylesheet\">
 
 ";
-        // line 70
+        // line 72
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('css');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('styles');
     }
@@ -163,7 +163,7 @@ class __TwigTemplate_1586b6c5a8cec87575a39f94b98b6adcca5a516cf2098cdccc78fbe1902
 
     public function getDebugInfo()
     {
-        return array (  150 => 70,  146 => 68,  144 => 60,  118 => 36,  108 => 29,  103 => 28,  95 => 25,  91 => 24,  87 => 23,  83 => 22,  79 => 21,  74 => 20,  72 => 19,  58 => 8,  54 => 7,  50 => 6,  46 => 5,  42 => 4,  37 => 1,);
+        return array (  150 => 72,  146 => 70,  144 => 60,  118 => 36,  108 => 29,  103 => 28,  95 => 25,  91 => 24,  87 => 23,  83 => 22,  79 => 21,  74 => 20,  72 => 19,  58 => 8,  54 => 7,  50 => 6,  46 => 5,  42 => 4,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -233,6 +233,8 @@ class __TwigTemplate_1586b6c5a8cec87575a39f94b98b6adcca5a516cf2098cdccc78fbe1902
   'assets/css/custom.css',
   'assets/css/style.css',
   'assets/rs-plugin/css/settings.css',
+  'assets/animate.css/animate.min.css',
+ 
   'assets/sweetalert/sweetalert.min.css'
 
   ] |theme }}.css\" rel=\"stylesheet\">

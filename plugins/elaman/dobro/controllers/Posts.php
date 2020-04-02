@@ -4,6 +4,7 @@ use Backend\Classes\Controller;
 use BackendMenu;
 use Illuminate\Http\Request;
 use Elaman\Dobro\Models\Post;
+use Auth;
 
 class Posts extends Controller
 {
@@ -46,5 +47,22 @@ class Posts extends Controller
     	$post->save();
 
     	return response()->json("Succesfully Share Count Increased", 201); 
+    }
+
+    public function approveHelp(Request $request)
+    {   
+        $inputs = $request->all();
+        $post = Post::findOrFail($inputs['post_id']);
+        
+        if(Auth::getUser())
+        {
+             $post->user_id = Auth::getUser()->id;
+             $post->approved = true;
+
+        }
+       
+        $post->save();
+
+        return response()->json("Succesfully Upvoted", 201); 
     }
 }

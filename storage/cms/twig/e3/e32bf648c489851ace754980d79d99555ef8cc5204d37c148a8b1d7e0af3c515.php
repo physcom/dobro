@@ -46,7 +46,7 @@ class __TwigTemplate_7f9af520a4c0c7a78f3171c572b18664e877bc8c69a5a6a4fb9eaa23c9c
         // line 6
         echo "    </head>
     <body>
-
+            
         <div class=\"container-fluid\">  
 
             <!-- Slider -->
@@ -151,7 +151,7 @@ class __TwigTemplate_7f9af520a4c0c7a78f3171c572b18664e877bc8c69a5a6a4fb9eaa23c9c
         {% partial 'meta' %}
     </head>
     <body>
-
+            
         <div class=\"container-fluid\">  
 
             <!-- Slider -->

@@ -24,12 +24,16 @@ layout = "default"
                         <div class="userinfo pull-left">
                            
                             <div class="icons">
-                                <h4>{{post.author}}</h4>
+                                <h4>{{post.author}} </h4>
                             </div>
                         </div>
                         <div class="posttext pull-right">
                             <h2>
-                                <a href="{{ url('/') }}/post/{{post.id}}">{{post.title}}</a>
+                                <a href="{{ url('/') }}/post/{{post.id}}">{{post.title}} 
+                                    {% if post.approved %}
+                                     <i class="fa fa-check-circle approved"></i>
+                                    {% endif %}
+                                </a>
                             </h2>
                             <p>{{post.content|raw}}</p>
                         </div>
@@ -44,7 +48,7 @@ layout = "default"
 
                         </div>
                         <div class="views"><i class="fa fa-eye"></i> {{post.view_count}}</div>
-                        <div class="time"><i class="fa fa-clock-o"></i> {{post.created_at|date("d.m.Y H:m")}}</div>                                    
+                        <div class="time"><i class="fa fa-clock-o"></i> {{post.created_at|time_diff}}</div>                                    
                     </div>
                     <div class="postinfobot">
 

@@ -27,3 +27,9 @@
 1.0.10:
     - 'Created table elaman_dobro_comments'
     - builder_table_create_elaman_dobro_comments.php
+1.0.11:
+    - 'Updated table elaman_dobro_posts'
+    - builder_table_update_elaman_dobro_posts_6.php
+1.0.12:
+    - 'Updated table elaman_dobro_posts'
+    - builder_table_update_elaman_dobro_posts_7.php

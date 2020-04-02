@@ -1,4 +1,4 @@
-1585580432a:1:{s:8:"meta.htm";a:5:{s:8:"fileName";s:8:"meta.htm";s:7:"content";s:2997:"<meta charset="utf-8">
+1585838508a:1:{s:8:"meta.htm";a:5:{s:8:"fileName";s:8:"meta.htm";s:7:"content";s:3039:"<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="apple-touch-icon" sizes="180x180" href="{{'assets/favicons/apple-touch-icon.png'|theme}}">
@@ -63,12 +63,14 @@
   'assets/css/custom.css',
   'assets/css/style.css',
   'assets/rs-plugin/css/settings.css',
+  'assets/animate.css/animate.min.css',
+ 
   'assets/sweetalert/sweetalert.min.css'
 
   ] |theme }}.css" rel="stylesheet">
 
 {% styles %}
-";s:5:"mtime";i:1585578904;s:6:"markup";s:2996:"<meta charset="utf-8">
+";s:5:"mtime";i:1585799886;s:6:"markup";s:3038:"<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="apple-touch-icon" sizes="180x180" href="{{'assets/favicons/apple-touch-icon.png'|theme}}">
@@ -133,6 +135,8 @@
   'assets/css/custom.css',
   'assets/css/style.css',
   'assets/rs-plugin/css/settings.css',
+  'assets/animate.css/animate.min.css',
+ 
   'assets/sweetalert/sweetalert.min.css'
 
   ] |theme }}.css" rel="stylesheet">

@@ -1,0 +1,6 @@
+plugin:
+    name: 'elaman.profile::lang.plugin.name'
+    description: 'elaman.profile::lang.plugin.description'
+    author: Elaman
+    icon: oc-icon-user
+    homepage: ''

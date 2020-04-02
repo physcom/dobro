@@ -67,20 +67,65 @@ class __TwigTemplate_3950de573de7d6e65cd5f3d972b62a094560c817614687ab31da44e5e88
           });
     });
   }
+
+  function approveHelp(post_id, user_id){
+    console.log(\"Post id \", post_id);
+    swal({
+      title: \"Are you sure?\",
+      text: \"You are going to approve Help!\",
+      type: \"info\",
+      showCancelButton: true,
+      confirmButtonClass: \"btn-success\",
+      confirmButtonText: \"Yes, approve!\",
+      closeOnConfirm: false
+    },
+    function(){
+        
+        \$.post(\"approve-help\",
+          {
+            post_id: post_id,
+            user_id: user_id
+          },
+          function(data, status){
+                if(status == \"success\"){
+                  swal(\"Успешно\", \"Upvote\", \"success\");
+                  location.reload();
+                  //window.location.href = \"/medicine\";
+                }
+                else{
+                  swal(\"Cancelled\", \"Something Bad!\", \"error\");
+                  location.reload();
+                  //window.location.href = \"/medicine\";
+                }
+          });
+    });
+  }
 </script> 
 <div class=\"container\">
     <div class=\"row\">
         <div class=\"col-lg-8 breadcrumbf\">
             <a href=\"";
-        // line 38
+        // line 71
         echo url("/");
         echo "\">Главная</a> <span class=\"diviver\">&gt;</span>  <a href=\"#\">Детали темы</a>
         </div>
     </div>
 </div>
-
-
-<div class=\"container\">
+";
+        // line 75
+        if (($context["user"] ?? null)) {
+            // line 76
+            echo "<button class=\"btn btn-success donate\" onclick=\"approveHelp(";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "id", [], "any", false, false, false, 76), "html", null, true);
+            echo ", ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "id", [], "any", false, false, false, 76), "html", null, true);
+            echo ")\">Donate ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "name", [], "any", false, false, false, 76), "html", null, true);
+            echo " <i class=\"fa fa-gift\" aria-hidden=\"true\"></i></button>
+";
+        }
+        // line 78
+        echo "<div class=\"container\">
     <div class=\"row\">
         <div class=\"col-lg-8 col-md-8\">
 
@@ -90,27 +135,27 @@ class __TwigTemplate_3950de573de7d6e65cd5f3d972b62a094560c817614687ab31da44e5e88
                     <div class=\"userinfo pull-left\">
                         <div class=\"avatar\">
                             <img src=\"";
-        // line 53
+        // line 87
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/avatar2.jpg");
         echo "\" alt=\"\" />
                         </div>
 
                         <div class=\"icons\">
                            <h3>";
-        // line 57
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "author", [], "any", false, false, false, 57), "html", null, true);
+        // line 91
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "author", [], "any", false, false, false, 91), "html", null, true);
         echo "</h3>
                         </div>
                     </div>
                     <div class=\"posttext pull-right\">
                         <h2>";
-        // line 61
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "title", [], "any", false, false, false, 61), "html", null, true);
+        // line 95
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "title", [], "any", false, false, false, 95), "html", null, true);
         echo "</h2>
                         <p>
                             ";
-        // line 63
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "content", [], "any", false, false, false, 63), "html", null, true);
+        // line 97
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "content", [], "any", false, false, false, 97), "html", null, true);
         echo "
                         </p>
                     </div>
@@ -120,36 +165,35 @@ class __TwigTemplate_3950de573de7d6e65cd5f3d972b62a094560c817614687ab31da44e5e88
 
                     <div class=\"likeblock pull-left\">
                         <button class=\"up\" onclick=\"upVote('";
-        // line 71
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "id", [], "any", false, false, false, 71), "html", null, true);
-        echo "')\">
+        // line 105
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "id", [], "any", false, false, false, 105), "html", null, true);
+        echo "')\" title=\"Up Vote\">
                             <i class=\"fa fa-thumbs-o-up\"></i>";
-        // line 72
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "upvote_count", [], "any", false, false, false, 72), "html", null, true);
+        // line 106
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "upvote_count", [], "any", false, false, false, 106), "html", null, true);
         echo "
                         </button>
-                    
                     </div>
-                    <div class=\"posted pull-left\"><i class=\"fa fa-clock-o\"></i> Опубликовано : ";
-        // line 76
-        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "created_at", [], "any", false, false, false, 76), "d.m.Y H:m"), "html", null, true);
+                    <div class=\"posted pull-left\"><i class=\"fa fa-clock-o\"></i> ";
+        // line 109
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "created_at", [], "any", false, false, false, 109), "d.m.Y H:m"), "html", null, true);
         echo "</div>
 
                     <div class=\"next pull-right\">                                        
                         <a href=\"#\" class=\"sharer\" data-sharer=\"facebook\" data-url=\"";
-        // line 79
+        // line 112
         echo url("/");
         echo "/post/";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "id", [], "any", false, false, false, 79), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "id", [], "any", false, false, false, 112), "html", null, true);
         echo "\"> 
                                 <i class=\"fa fa-facebook-square \" ></i>
                         </a>
                         
                         <a href=\"#\" class=\"sharer\" data-sharer=\"whatsapp\" data-url=\"";
-        // line 83
+        // line 116
         echo url("/");
         echo "/post/";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "id", [], "any", false, false, false, 83), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "id", [], "any", false, false, false, 116), "html", null, true);
         echo "\"> 
                             <i class=\"fa fa-whatsapp\" ></i>
                         </a>
@@ -165,41 +209,41 @@ class __TwigTemplate_3950de573de7d6e65cd5f3d972b62a094560c817614687ab31da44e5e88
             <div class=\"clearfix\" style=\"margin-top: 10px\"></div>
 
             ";
-        // line 97
+        // line 130
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "comments", [], "any", false, false, false, 97));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "comments", [], "any", false, false, false, 130));
         foreach ($context['_seq'] as $context["_key"] => $context["comment"]) {
-            // line 98
+            // line 131
             echo "            <!-- POST -->
             <div class=\"post\">
                 <div class=\"topwrap\">
                     <div class=\"userinfo pull-left\">
                         <div class=\"avatar\">
                             <img src=\"";
-            // line 103
+            // line 136
             echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/avatar2.jpg");
             echo "\" alt=\"\" />
                         </div>
 
                         <div class=\"icons\">
                             <h4>";
-            // line 107
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "author", [], "any", false, false, false, 107), "html", null, true);
+            // line 140
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "author", [], "any", false, false, false, 140), "html", null, true);
             echo "</h4>
                         </div>
                     </div>
                     <div class=\"posttext pull-left\">
                         <p>";
-            // line 111
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "comment", [], "any", false, false, false, 111), "html", null, true);
+            // line 144
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "comment", [], "any", false, false, false, 144), "html", null, true);
             echo "</p>
                     </div>
                     <div class=\"clearfix\"></div>
                 </div>                              
                 <div class=\"postinfobot\">
                     <div class=\"posted pull-left\"><i class=\"fa fa-clock-o\"></i> Опубликовано : ";
-            // line 116
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "created_at", [], "any", false, false, false, 116), "d.m.Y H:m"), "html", null, true);
+            // line 149
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "created_at", [], "any", false, false, false, 149), "d.m.Y H:m"), "html", null, true);
             echo "</div>
                     <div class=\"clearfix\"></div>
                 </div>
@@ -209,13 +253,13 @@ class __TwigTemplate_3950de573de7d6e65cd5f3d972b62a094560c817614687ab31da44e5e88
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comment'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 120
+        // line 153
         echo "    
 
             <!-- POST -->
             <div class=\"post\">
                  ";
-        // line 124
+        // line 157
         echo call_user_func_array($this->env->getFunction('form_ajax')->getCallable(), ["ajax", "onSubmitComment", ["class" => "form"]]);
         echo "
               
@@ -248,7 +292,7 @@ class __TwigTemplate_3950de573de7d6e65cd5f3d972b62a094560c817614687ab31da44e5e88
                         <div class=\"clearfix\"></div>
                     </div>
                 ";
-        // line 154
+        // line 187
         echo call_user_func_array($this->env->getFunction('form_close')->getCallable(), ["close"]);
         echo "
             </div><!-- POST -->
@@ -264,26 +308,26 @@ class __TwigTemplate_3950de573de7d6e65cd5f3d972b62a094560c817614687ab31da44e5e88
                 <div class=\"blocktxt\">
                     <ul class=\"cats\">
                         ";
-        // line 167
+        // line 200
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["categories"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 168
+            // line 201
             echo "                            <li><a href=\"";
             echo url("/");
             echo "/category-posts/";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 168), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 201), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "title", [], "any", false, false, false, 168), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "title", [], "any", false, false, false, 201), "html", null, true);
             echo " <span class=\"badge pull-right\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "getPostCount", [], "any", false, false, false, 168), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "getPostCount", [], "any", false, false, false, 201), "html", null, true);
             echo "</span></a></li>
                         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 170
+        // line 203
         echo "                    
                     </ul>
                 </div>
@@ -305,7 +349,7 @@ class __TwigTemplate_3950de573de7d6e65cd5f3d972b62a094560c817614687ab31da44e5e88
 
     public function getDebugInfo()
     {
-        return array (  287 => 170,  272 => 168,  268 => 167,  252 => 154,  219 => 124,  213 => 120,  202 => 116,  194 => 111,  187 => 107,  180 => 103,  173 => 98,  169 => 97,  150 => 83,  141 => 79,  135 => 76,  128 => 72,  124 => 71,  113 => 63,  108 => 61,  101 => 57,  94 => 53,  76 => 38,  37 => 1,);
+        return array (  331 => 203,  316 => 201,  312 => 200,  296 => 187,  263 => 157,  257 => 153,  246 => 149,  238 => 144,  231 => 140,  224 => 136,  217 => 131,  213 => 130,  194 => 116,  185 => 112,  179 => 109,  173 => 106,  169 => 105,  158 => 97,  153 => 95,  146 => 91,  139 => 87,  128 => 78,  118 => 76,  116 => 75,  109 => 71,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -343,6 +387,39 @@ class __TwigTemplate_3950de573de7d6e65cd5f3d972b62a094560c817614687ab31da44e5e88
           });
     });
   }
+
+  function approveHelp(post_id, user_id){
+    console.log(\"Post id \", post_id);
+    swal({
+      title: \"Are you sure?\",
+      text: \"You are going to approve Help!\",
+      type: \"info\",
+      showCancelButton: true,
+      confirmButtonClass: \"btn-success\",
+      confirmButtonText: \"Yes, approve!\",
+      closeOnConfirm: false
+    },
+    function(){
+        
+        \$.post(\"approve-help\",
+          {
+            post_id: post_id,
+            user_id: user_id
+          },
+          function(data, status){
+                if(status == \"success\"){
+                  swal(\"Успешно\", \"Upvote\", \"success\");
+                  location.reload();
+                  //window.location.href = \"/medicine\";
+                }
+                else{
+                  swal(\"Cancelled\", \"Something Bad!\", \"error\");
+                  location.reload();
+                  //window.location.href = \"/medicine\";
+                }
+          });
+    });
+  }
 </script> 
 <div class=\"container\">
     <div class=\"row\">
@@ -351,8 +428,9 @@ class __TwigTemplate_3950de573de7d6e65cd5f3d972b62a094560c817614687ab31da44e5e88
         </div>
     </div>
 </div>
-
-
+{% if user %}
+<button class=\"btn btn-success donate\" onclick=\"approveHelp({{post.id}}, {{user.id}})\">Donate {{user.name}} <i class=\"fa fa-gift\" aria-hidden=\"true\"></i></button>
+{% endif %}
 <div class=\"container\">
     <div class=\"row\">
         <div class=\"col-lg-8 col-md-8\">
@@ -380,12 +458,11 @@ class __TwigTemplate_3950de573de7d6e65cd5f3d972b62a094560c817614687ab31da44e5e88
                 <div class=\"postinfobot\">
 
                     <div class=\"likeblock pull-left\">
-                        <button class=\"up\" onclick=\"upVote('{{post.id}}')\">
+                        <button class=\"up\" onclick=\"upVote('{{post.id}}')\" title=\"Up Vote\">
                             <i class=\"fa fa-thumbs-o-up\"></i>{{post.upvote_count}}
                         </button>
-                    
                     </div>
-                    <div class=\"posted pull-left\"><i class=\"fa fa-clock-o\"></i> Опубликовано : {{post.created_at|date(\"d.m.Y H:m\")}}</div>
+                    <div class=\"posted pull-left\"><i class=\"fa fa-clock-o\"></i> {{post.created_at|date(\"d.m.Y H:m\")}}</div>
 
                     <div class=\"next pull-right\">                                        
                         <a href=\"#\" class=\"sharer\" data-sharer=\"facebook\" data-url=\"{{ url('/') }}/post/{{post.id}}\"> 

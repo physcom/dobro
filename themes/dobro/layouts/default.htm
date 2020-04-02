@@ -1,4 +1,19 @@
 description = "Default layout"
+
+[session]
+security = "all"
+==
+<?php 
+
+function onLogout()
+{
+   
+
+    $this->session->onLogout();
+
+    return Redirect::to("/");
+}     
+?>
 ==
 <!DOCTYPE html>
 <html>
@@ -7,7 +22,7 @@ description = "Default layout"
         {% partial 'meta' %}
     </head>
     <body>
-
+            
         <div class="container-fluid">  
 
             <!-- Slider -->

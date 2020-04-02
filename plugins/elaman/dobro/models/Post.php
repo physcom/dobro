@@ -1,6 +1,7 @@
 <?php namespace Elaman\Dobro\Models;
 
 use Model;
+use RainLab\User\Models\User;
 
 /**
  * Model
@@ -22,7 +23,8 @@ class Post extends Model
     ];
 
     public $belongsTo = [
-        'category' => ['Elaman\Dobro\Models\PostCategory', 'key' => 'post_category_id', 'otherKey' => 'id']
+        'category' => ['Elaman\Dobro\Models\PostCategory', 'key' => 'post_category_id', 'otherKey' => 'id'],
+        'user' => ['RainLab\User\Models\User', 'key' => 'user_id', 'otherKey' => 'id']
     ];
 
     public $hasMany = [
