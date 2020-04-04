@@ -18,6 +18,7 @@ is_hidden = 0
              'title'     => 'required',
              'category_id'  => 'required',
              'author' => 'required',
+             'phone' => 'required',
          ];
           
           $messages = [
@@ -37,6 +38,7 @@ is_hidden = 0
               $comm->post_category_id = Input::get('category_id');
               $comm->title = Input::get('title');
               $comm->content = Input::get('content');
+              $comm->approved = false;
               $comm->slug = str_slug(Input::get('title'));
   			      $comm->author = Input::get('author');
   			      $comm->phone = Input::get('phone');
@@ -107,7 +109,7 @@ is_hidden = 0
                             </div>
 
                             <div>
-                                <input type="text" name="phone" placeholder="Введите свой номер телефона" class="form-control" />
+                                <input type="text" name="phone" placeholder="Введите свой номер телефона, 0888 00 00 00" class="form-control" />
                             </div>
                          
                         </div>

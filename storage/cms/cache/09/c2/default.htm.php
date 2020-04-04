@@ -1,5 +1,5 @@
 <?php 
-class Cms5e862253265ba153597596_7a6a2f4613100268fc1c520ac4d504d1Class extends Cms\Classes\LayoutCode
+class Cms5e88d7fd9af85725839655_e903dcf8baec4dc3aa71837352508bcdClass extends Cms\Classes\LayoutCode
 {
 public function onLogout()
     {

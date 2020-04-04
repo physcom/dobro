@@ -7,7 +7,7 @@ layout = "default"
    use Elaman\Dobro\Models\PostCategory;
        
    function onStart(){
-       $this['posts'] = Post::orderBy('created_at', 'desc')->paginate(2);
+       $this['posts'] = Post::orderBy('created_at', 'desc')->paginate(10);
        $this['categories'] = PostCategory::get();
    }
 
@@ -23,19 +23,20 @@ layout = "default"
                     <div class="wrap-ut pull-left">
                         <div class="userinfo pull-left">
                            
-                            <div class="icons">
-                                <h4>{{post.author}} </h4>
-                            </div>
+                            <div class="name pb10"><i class="fa fa-user"></i> : {{post.author}} </div>
+                            <div class="address pb10"><i class="fa fa-map-marker"></i> : {{post.address}}</div>
+                            <div class="phone pb10"><i class="fa fa-phone"></i>: <a href="tel:{{post.phone}}"> {{post.phone}}</a></div>
                         </div>
                         <div class="posttext pull-right">
                             <h2>
                                 <a href="{{ url('/') }}/post/{{post.id}}">{{post.title}} 
                                     {% if post.approved %}
-                                     <i class="fa fa-check-circle approved"></i>
+                                        <i class="fa fa-check-circle approved" title="Фонд: {{post.user.name}}"></i>
                                     {% endif %}
                                 </a>
                             </h2>
                             <p>{{post.content|raw}}</p>
+                           
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -54,10 +55,11 @@ layout = "default"
 
                         <div class="likeblock pull-left">
                             <a href="#" class="up"><i class="fa fa-thumbs-o-up"></i>{{post.upvote_count}}</a>
-                        
                         </div>
-                        <div class="posted pull-left"><i class="fa fa-map-marker"></i> {{post.getCategoryTitle}}</div>
-
+                        <div class="posted pull-left">
+                            <i class="fa fa-list-alt"></i> {{post.getCategoryTitle}}
+                        </div>
+                        <div class="gift pull-left"><i class="fa fa-gift"></i> {{post.user.name}}</div>
                         <div class="next pull-right">   
                             <!-- Your share button code -->
                             <div class="fb-share-button" 

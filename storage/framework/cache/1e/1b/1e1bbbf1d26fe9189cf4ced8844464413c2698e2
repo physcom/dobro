@@ -1,4 +1,4 @@
-1585858744a:1:{s:11:"default.htm";a:7:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:1629:"description = "Default layout"
+1586029831a:1:{s:11:"default.htm";a:7:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:2071:"description = "Default layout"
 
 [session]
 security = "all"
@@ -24,21 +24,38 @@ security = "all"
     </head>
     <body>
             
-        <div class="container-fluid">  
-
-            <!-- Slider -->
-            <div class="tp-banner-container">
-                <div class="tp-banner" >
-                    <!-- MAIN IMAGE -->
-                    <a href="{{ url('/') }}"><img src="{{'assets/images/slide.jpg'|theme}}"  alt="slidebg1"  class="img-responsive" style="width: 100%;"></a>
-                    <div class="centered"><h1>Вместе Мы Сила</h1></div> 
-
-                </div>
+        
+        <div class="mt-header-ed header-above">
+          <div class="container">
+          
+           <div class="row">
+           
+            <div class="col-lg-6 col-xl-6 col-md-12 col-12">            
+            
+             #КүчБирдикте    
+            </div>
+            
+                 <div class="col-lg-6 col-xl-6 col-md-12 col-12">
+          
+              #СилаВЕдинстве  
+             </div>                        
+               </div>
+          
+          </div>
+        </div>
+        <!-- Slider -->
+        <!-- <div class="tp-banner-container">
+            <div class="tp-banner" >
+              
+                <a href="{{ url('/') }}"><img src="{{'assets/images/slide.jpg'|theme}}"  alt="slidebg1"  class="img-responsive" style="width: 100%;"></a>
+                <div class="centered"><h1>Вместе Мы Сила</h1></div> 
 
             </div>
-            <!-- //Slider -->
 
+        </div> -->
+        <!-- //Slider -->
 
+        
         <!-- Header -->
         <header id="layout-header">
             {% partial 'site/header' %}
@@ -69,11 +86,11 @@ security = "all"
 
         
 
-        </div>
+     
 
     </body>
 </html>
-";s:5:"mtime";i:1585848912;s:6:"markup";s:1430:"<!DOCTYPE html>
+";s:5:"mtime";i:1586026479;s:6:"markup";s:1872:"<!DOCTYPE html>
 <html>
     
     <head>
@@ -81,21 +98,38 @@ security = "all"
     </head>
     <body>
             
-        <div class="container-fluid">  
-
-            <!-- Slider -->
-            <div class="tp-banner-container">
-                <div class="tp-banner" >
-                    <!-- MAIN IMAGE -->
-                    <a href="{{ url('/') }}"><img src="{{'assets/images/slide.jpg'|theme}}"  alt="slidebg1"  class="img-responsive" style="width: 100%;"></a>
-                    <div class="centered"><h1>Вместе Мы Сила</h1></div> 
-
-                </div>
+        
+        <div class="mt-header-ed header-above">
+          <div class="container">
+          
+           <div class="row">
+           
+            <div class="col-lg-6 col-xl-6 col-md-12 col-12">            
+            
+             #КүчБирдикте    
+            </div>
+            
+                 <div class="col-lg-6 col-xl-6 col-md-12 col-12">
+          
+              #СилаВЕдинстве  
+             </div>                        
+               </div>
+          
+          </div>
+        </div>
+        <!-- Slider -->
+        <!-- <div class="tp-banner-container">
+            <div class="tp-banner" >
+              
+                <a href="{{ url('/') }}"><img src="{{'assets/images/slide.jpg'|theme}}"  alt="slidebg1"  class="img-responsive" style="width: 100%;"></a>
+                <div class="centered"><h1>Вместе Мы Сила</h1></div> 
 
             </div>
-            <!-- //Slider -->
 
+        </div> -->
+        <!-- //Slider -->
 
+        
         <!-- Header -->
         <header id="layout-header">
             {% partial 'site/header' %}
@@ -126,7 +160,7 @@ security = "all"
 
         
 
-        </div>
+     
 
     </body>
 </html>";s:4:"code";s:124:" 

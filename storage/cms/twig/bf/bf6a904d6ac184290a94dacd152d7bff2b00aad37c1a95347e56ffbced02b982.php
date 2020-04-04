@@ -47,62 +47,79 @@ class __TwigTemplate_a3ffb2bbeb635fce48dbd56d2cd38fa43610a6dbe9f7c289cdeedabd71e
         echo "    </head>
     <body>
             
-        <div class=\"container-fluid\">  
-
-            <!-- Slider -->
-            <div class=\"tp-banner-container\">
-                <div class=\"tp-banner\" >
-                    <!-- MAIN IMAGE -->
-                    <a href=\"";
-        // line 15
+        
+        <div class=\"mt-header-ed header-above\">
+          <div class=\"container\">
+          
+           <div class=\"row\">
+           
+            <div class=\"col-lg-6 col-xl-6 col-md-12 col-12\">            
+            
+             #КүчБирдикте    
+            </div>
+            
+                 <div class=\"col-lg-6 col-xl-6 col-md-12 col-12\">
+          
+              #СилаВЕдинстве  
+             </div>                        
+               </div>
+          
+          </div>
+        </div>
+        <!-- Slider -->
+        <!-- <div class=\"tp-banner-container\">
+            <div class=\"tp-banner\" >
+              
+                <a href=\"";
+        // line 32
         echo url("/");
         echo "\"><img src=\"";
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/slide.jpg");
         echo "\"  alt=\"slidebg1\"  class=\"img-responsive\" style=\"width: 100%;\"></a>
-                    <div class=\"centered\"><h1>Вместе Мы Сила</h1></div> 
-
-                </div>
+                <div class=\"centered\"><h1>Вместе Мы Сила</h1></div> 
 
             </div>
-            <!-- //Slider -->
 
+        </div> -->
+        <!-- //Slider -->
 
+        
         <!-- Header -->
         <header id=\"layout-header\">
             ";
-        // line 26
+        // line 43
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/header"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 27
+        // line 44
         echo "        </header>
 
         <!-- Content -->
         <section class=\"content\">
             ";
-        // line 31
+        // line 48
         echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
-        // line 32
+        // line 49
         echo "        </section>
 
         <!-- Footer -->
         <footer id=\"layout-footer\">
             ";
-        // line 36
+        // line 53
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/footer"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 37
+        // line 54
         echo "        </footer>
 
         <!-- core JS -->
         <script src=\"";
-        // line 40
+        // line 57
         echo $this->extensions['Cms\Twig\Extension']->themeFilter([0 => "assets/js/jquery.js", 1 => "assets/rs-plugin/js/jquery.themepunch.plugins.min.js", 2 => "assets/rs-plugin/js/jquery.themepunch.revolution.min.js", 3 => "assets/js/bootstrap.min.js", 4 => "assets/js/sharer.js", 5 => "assets/sweetalert/sweetalert.min.js"]);
-        // line 48
+        // line 65
         echo "\"></script>
         ";
-        // line 49
+        // line 66
         $_minify = System\Classes\CombineAssets::instance()->useMinify;
         if ($_minify) {
             echo '<script src="' . Request::getBasePath() . '/modules/system/assets/js/framework.combined-min.js"></script>'.PHP_EOL;
@@ -113,15 +130,15 @@ class __TwigTemplate_a3ffb2bbeb635fce48dbd56d2cd38fa43610a6dbe9f7c289cdeedabd71e
         }
         echo '<link rel="stylesheet" property="stylesheet" href="' . Request::getBasePath() .'/modules/system/assets/css/framework.extras'.($_minify ? '-min' : '').'.css">'.PHP_EOL;
         unset($_minify);
-        // line 50
+        // line 67
         echo "        ";
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('js');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('scripts');
-        // line 51
+        // line 68
         echo "
         
 
-        </div>
+     
 
     </body>
 </html>";
@@ -139,7 +156,7 @@ class __TwigTemplate_a3ffb2bbeb635fce48dbd56d2cd38fa43610a6dbe9f7c289cdeedabd71e
 
     public function getDebugInfo()
     {
-        return array (  121 => 51,  117 => 50,  106 => 49,  103 => 48,  101 => 40,  96 => 37,  92 => 36,  86 => 32,  84 => 31,  78 => 27,  74 => 26,  58 => 15,  47 => 6,  43 => 5,  37 => 1,);
+        return array (  138 => 68,  134 => 67,  123 => 66,  120 => 65,  118 => 57,  113 => 54,  109 => 53,  103 => 49,  101 => 48,  95 => 44,  91 => 43,  75 => 32,  47 => 6,  43 => 5,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -152,21 +169,38 @@ class __TwigTemplate_a3ffb2bbeb635fce48dbd56d2cd38fa43610a6dbe9f7c289cdeedabd71e
     </head>
     <body>
             
-        <div class=\"container-fluid\">  
-
-            <!-- Slider -->
-            <div class=\"tp-banner-container\">
-                <div class=\"tp-banner\" >
-                    <!-- MAIN IMAGE -->
-                    <a href=\"{{ url('/') }}\"><img src=\"{{'assets/images/slide.jpg'|theme}}\"  alt=\"slidebg1\"  class=\"img-responsive\" style=\"width: 100%;\"></a>
-                    <div class=\"centered\"><h1>Вместе Мы Сила</h1></div> 
-
-                </div>
+        
+        <div class=\"mt-header-ed header-above\">
+          <div class=\"container\">
+          
+           <div class=\"row\">
+           
+            <div class=\"col-lg-6 col-xl-6 col-md-12 col-12\">            
+            
+             #КүчБирдикте    
+            </div>
+            
+                 <div class=\"col-lg-6 col-xl-6 col-md-12 col-12\">
+          
+              #СилаВЕдинстве  
+             </div>                        
+               </div>
+          
+          </div>
+        </div>
+        <!-- Slider -->
+        <!-- <div class=\"tp-banner-container\">
+            <div class=\"tp-banner\" >
+              
+                <a href=\"{{ url('/') }}\"><img src=\"{{'assets/images/slide.jpg'|theme}}\"  alt=\"slidebg1\"  class=\"img-responsive\" style=\"width: 100%;\"></a>
+                <div class=\"centered\"><h1>Вместе Мы Сила</h1></div> 
 
             </div>
-            <!-- //Slider -->
 
+        </div> -->
+        <!-- //Slider -->
 
+        
         <!-- Header -->
         <header id=\"layout-header\">
             {% partial 'site/header' %}
@@ -197,7 +231,7 @@ class __TwigTemplate_a3ffb2bbeb635fce48dbd56d2cd38fa43610a6dbe9f7c289cdeedabd71e
 
         
 
-        </div>
+     
 
     </body>
 </html>", "/var/www/html/dobro/themes/dobro/layouts/default.htm", "");

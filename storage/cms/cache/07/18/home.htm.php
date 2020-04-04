@@ -1,10 +1,10 @@
 <?php 
 use Elaman\Dobro\Models\Post;
 use Elaman\Dobro\Models\PostCategory;
-class Cms5e84f8ef4219f556422996_ea6a7ed99d424df6113439b28a5b51c7Class extends Cms\Classes\PageCode
+class Cms5e88a1127f10a054956977_abde36179ce4aebf74b54c5923bca16fClass extends Cms\Classes\PageCode
 {
       public function onStart(){
-       $this['posts'] = Post::orderBy('created_at', 'desc')->paginate(2);
+       $this['posts'] = Post::orderBy('created_at', 'desc')->paginate(10);
        $this['categories'] = PostCategory::get();
    }
 }
