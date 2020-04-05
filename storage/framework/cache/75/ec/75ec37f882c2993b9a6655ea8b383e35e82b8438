@@ -1,4 +1,4 @@
-1586029831a:1:{s:8:"post.htm";a:8:{s:8:"fileName";s:8:"post.htm";s:7:"content";s:10426:"title = "Тема"
+1586063336a:1:{s:8:"post.htm";a:8:{s:8:"fileName";s:8:"post.htm";s:7:"content";s:10462:"title = "Тема"
 url = "/post/:id"
 layout = "default"
 ==
@@ -138,7 +138,7 @@ layout = "default"
 <div class="container">
     <div class="row">
         <div class="col-lg-8 breadcrumbf">
-            <a href="{{ url('/') }}">Главная</a> <span class="diviver">&gt;</span>  <a href="#">Детали темы</a>
+            <a href="{{ url('/') }}">Главная</a> <span class="diviver"><i class="fa fa-arrow-circle-right"></i></span>  <a href="#">Детали темы</a>
         </div>
     </div>
 </div>
@@ -159,7 +159,7 @@ layout = "default"
                 <div class="topwrap">
                     <div class="userinfo pull-left">
                         <div class="avatar">
-                            <img src="{{'assets/images/avatar2.jpg'|theme}}" alt="" />
+                            <img src="{{'assets/images/default.jpg'|theme}}" alt="" />
                         </div>
 
                         <div class="icons">
@@ -210,7 +210,7 @@ layout = "default"
                 <div class="topwrap">
                     <div class="userinfo pull-left">
                         <div class="avatar">
-                            <img src="{{'assets/images/avatar2.jpg'|theme}}" alt="" />
+                            <img src="{{'assets/images/default.jpg'|theme}}" alt="" />
                         </div>
 
                         <div class="icons">
@@ -283,7 +283,7 @@ layout = "default"
             </div>
         </div>
     </div>
-</div>";s:5:"mtime";i:1585850054;s:6:"markup";s:8679:"<script type="text/javascript">
+</div>";s:5:"mtime";i:1586062118;s:6:"markup";s:8715:"<script type="text/javascript">
   
   function upVote(post_id){
     console.log("Post id ", post_id);
@@ -353,7 +353,7 @@ layout = "default"
 <div class="container">
     <div class="row">
         <div class="col-lg-8 breadcrumbf">
-            <a href="{{ url('/') }}">Главная</a> <span class="diviver">&gt;</span>  <a href="#">Детали темы</a>
+            <a href="{{ url('/') }}">Главная</a> <span class="diviver"><i class="fa fa-arrow-circle-right"></i></span>  <a href="#">Детали темы</a>
         </div>
     </div>
 </div>
@@ -374,7 +374,7 @@ layout = "default"
                 <div class="topwrap">
                     <div class="userinfo pull-left">
                         <div class="avatar">
-                            <img src="{{'assets/images/avatar2.jpg'|theme}}" alt="" />
+                            <img src="{{'assets/images/default.jpg'|theme}}" alt="" />
                         </div>
 
                         <div class="icons">
@@ -425,7 +425,7 @@ layout = "default"
                 <div class="topwrap">
                     <div class="userinfo pull-left">
                         <div class="avatar">
-                            <img src="{{'assets/images/avatar2.jpg'|theme}}" alt="" />
+                            <img src="{{'assets/images/default.jpg'|theme}}" alt="" />
                         </div>
 
                         <div class="icons">

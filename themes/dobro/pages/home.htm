@@ -13,7 +13,49 @@ layout = "default"
 
 ?>
 ==
+<script type="text/javascript">
+  
+  function upVote(post_id){
+    console.log("Post id ", post_id);
+    swal({
+      title: "Вы уверены?",
+      text: "Вы собираетесь поднять голос!",
+      type: "info",
+      showCancelButton: true,
+      confirmButtonClass: "btn-success",
+      confirmButtonText: "Да",
+      closeOnConfirm: false
+    },
+    function(){
+        
+        $.post("post/upvote-post",
+          {
+            post_id: post_id
+          },
+          function(data, status){
+                if(status == "success"){
+                  swal("Успешно", "Upvote", "success");
+                  location.reload();
+                  //window.location.href = "/medicine";
+                }
+                else{
+                  swal("Cancelled", "Something Bad!", "error");
+                  location.reload();
+                  //window.location.href = "/medicine";
+                }
+          });
+    });
+  }
 
+</script> 
+{% flash %}
+    <div class="mg_comment_message" style="float: left;width: 100%;margin:0 0 30px; ">
+      <div class="alert alert-{{ type }}">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          {{ message }}
+      </div>
+    </div> 
+ {% endflash %}
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-8">
@@ -54,7 +96,7 @@ layout = "default"
                     <div class="postinfobot">
 
                         <div class="likeblock pull-left">
-                            <a href="#" class="up"><i class="fa fa-thumbs-o-up"></i>{{post.upvote_count}}</a>
+                            <button class="up" onclick="upVote('{{post.id}}')" title="Up Vote"><i class="fa fa-thumbs-o-up"></i>{{post.upvote_count}}</button>
                         </div>
                         <div class="posted pull-left">
                             <i class="fa fa-list-alt"></i> {{post.getCategoryTitle}}

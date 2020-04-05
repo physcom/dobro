@@ -1,4 +1,4 @@
-1585856257a:1:{s:9:"login.htm";a:7:{s:8:"fileName";s:9:"login.htm";s:7:"content";s:2838:"description = "Login layout"
+1586062854a:1:{s:9:"login.htm";a:7:{s:8:"fileName";s:9:"login.htm";s:7:"content";s:3015:"description = "Login layout"
 
 [session]
 security = "all"
@@ -46,15 +46,23 @@ security = "all"
     <body>
             
       
-        <!-- Slider -->
-        <div class="tp-banner-container">
-            <div class="tp-banner" >
-                <!-- MAIN IMAGE -->
-                <a href="{{ url('/') }}"><img src="{{'assets/images/slide.jpg'|theme}}"  alt="slidebg1"  class="img-responsive" style="width: 100%;"></a>
-                <div class="centered"><h1>Вместе Мы Сила</h1></div> 
-
-            </div>
-
+        <div class="mt-header-ed header-above">
+              <div class="container">
+              
+               <div class="row">
+               
+                <div class="col-lg-6 col-xl-6 col-md-12 col-12">            
+                
+                 #КүчБирдикте    
+                </div>
+                
+                     <div class="col-lg-6 col-xl-6 col-md-12 col-12">
+              
+                  #СилаВЕдинстве  
+                 </div>                        
+                   </div>
+              
+              </div>
         </div>
         <!-- Header -->
         <header id="layout-header">
@@ -84,7 +92,7 @@ security = "all"
 
     </body>
 </html>
-";s:5:"mtime";i:1585849068;s:6:"markup";s:2776:"<!DOCTYPE html>
+";s:5:"mtime";i:1586061848;s:6:"markup";s:2953:"<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -126,15 +134,23 @@ security = "all"
     <body>
             
       
-        <!-- Slider -->
-        <div class="tp-banner-container">
-            <div class="tp-banner" >
-                <!-- MAIN IMAGE -->
-                <a href="{{ url('/') }}"><img src="{{'assets/images/slide.jpg'|theme}}"  alt="slidebg1"  class="img-responsive" style="width: 100%;"></a>
-                <div class="centered"><h1>Вместе Мы Сила</h1></div> 
-
-            </div>
-
+        <div class="mt-header-ed header-above">
+              <div class="container">
+              
+               <div class="row">
+               
+                <div class="col-lg-6 col-xl-6 col-md-12 col-12">            
+                
+                 #КүчБирдикте    
+                </div>
+                
+                     <div class="col-lg-6 col-xl-6 col-md-12 col-12">
+              
+                  #СилаВЕдинстве  
+                 </div>                        
+                   </div>
+              
+              </div>
         </div>
         <!-- Header -->
         <header id="layout-header">

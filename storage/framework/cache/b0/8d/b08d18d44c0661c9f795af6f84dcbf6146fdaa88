@@ -1,4 +1,4 @@
-1586030031a:1:{s:15:"site/header.htm";a:6:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:3160:"[account]
+1586063190a:1:{s:15:"site/header.htm";a:6:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:3247:"[account]
 redirect = "Home"
 paramCode = "code"
 forceSecure = 0
@@ -7,16 +7,15 @@ forceSecure = 0
 <div class="headernav">
     <div class="container">
         <div class="row">
-            
             <div class="col-xl-12 col-lg-12 col-md-12 col-10">
-            <div class="site-branding text-center">
-                <a href="{{ url('/') }}" class="custom-logo-link" rel="home">
-                    <img src="{{'assets/images/logo.png'|theme}}" class="custom-logo" alt="" style="width: 116px;">
-                </a>                                
-                <h1 class="site-title"><a href="" rel="home"></a></h1>
-                <p class="site-description">Вместе мы сила</p>
-            </div> 
-        </div>
+                <div class="site-branding text-center">
+                    <a href="{{ url('/') }}" class="custom-logo-link" rel="home">
+                        <img src="{{'assets/images/logo.png'|theme}}" class="custom-logo" alt="" style="width: 116px;">
+                    </a>                                
+                    <h1 class="site-title"><a href="" rel="home"></a></h1>
+                    <p class="site-description">Вместе мы сила</p>
+                </div> 
+            </div>
             <div class="col-lg-4 search col-md-3">
                 <a href="{{ url('/') }}/fonds" class="btn btn-success"><i class="fa fa-gift" ></i> Фонды</a>
             </div>
@@ -34,11 +33,13 @@ forceSecure = 0
                         {% if user.avatar.path %}
                             <img alt="{{user.name}}" class="img-circle profile_img" src="{{ user.avatar.path }}" />
                         {% else %}
-                            <img alt="" class="img-circle profile_img" src="{{'assets/images/avatar.jpg'|theme}}" />
+                            <img alt="" class="img-circle profile_img" src="{{'assets/images/default.jpg'|theme}}" />
                         {% endif %}
                       
                     </a> <b class="caret"></b>
+                     {% if user %}
                     <div class="status green">&nbsp;</div>
+                    {% endif %}
                     <ul class="dropdown-menu" role="menu">
                         {% if user %}
                              <li role="presentation">
@@ -64,19 +65,18 @@ forceSecure = 0
     </div>
 </div>
 
-";s:5:"mtime";i:1586029429;s:6:"markup";s:3091:"<div class="headernav">
+";s:5:"mtime";i:1586061840;s:6:"markup";s:3178:"<div class="headernav">
     <div class="container">
         <div class="row">
-            
             <div class="col-xl-12 col-lg-12 col-md-12 col-10">
-            <div class="site-branding text-center">
-                <a href="{{ url('/') }}" class="custom-logo-link" rel="home">
-                    <img src="{{'assets/images/logo.png'|theme}}" class="custom-logo" alt="" style="width: 116px;">
-                </a>                                
-                <h1 class="site-title"><a href="" rel="home"></a></h1>
-                <p class="site-description">Вместе мы сила</p>
-            </div> 
-        </div>
+                <div class="site-branding text-center">
+                    <a href="{{ url('/') }}" class="custom-logo-link" rel="home">
+                        <img src="{{'assets/images/logo.png'|theme}}" class="custom-logo" alt="" style="width: 116px;">
+                    </a>                                
+                    <h1 class="site-title"><a href="" rel="home"></a></h1>
+                    <p class="site-description">Вместе мы сила</p>
+                </div> 
+            </div>
             <div class="col-lg-4 search col-md-3">
                 <a href="{{ url('/') }}/fonds" class="btn btn-success"><i class="fa fa-gift" ></i> Фонды</a>
             </div>
@@ -94,11 +94,13 @@ forceSecure = 0
                         {% if user.avatar.path %}
                             <img alt="{{user.name}}" class="img-circle profile_img" src="{{ user.avatar.path }}" />
                         {% else %}
-                            <img alt="" class="img-circle profile_img" src="{{'assets/images/avatar.jpg'|theme}}" />
+                            <img alt="" class="img-circle profile_img" src="{{'assets/images/default.jpg'|theme}}" />
                         {% endif %}
                       
                     </a> <b class="caret"></b>
+                     {% if user %}
                     <div class="status green">&nbsp;</div>
+                    {% endif %}
                     <ul class="dropdown-menu" role="menu">
                         {% if user %}
                              <li role="presentation">

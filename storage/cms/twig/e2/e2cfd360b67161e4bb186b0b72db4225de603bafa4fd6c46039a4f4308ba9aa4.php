@@ -107,7 +107,7 @@ class __TwigTemplate_892e749d561dbfbef8afc947b75b1102cd82ea6e529626a95f7cd876d28
             <a href=\"";
         // line 71
         echo url("/");
-        echo "\">Главная</a> <span class=\"diviver\">&gt;</span>  <a href=\"#\">Детали темы</a>
+        echo "\">Главная</a> <span class=\"diviver\"><i class=\"fa fa-arrow-circle-right\"></i></span>  <a href=\"#\">Детали темы</a>
         </div>
     </div>
 </div>
@@ -154,7 +154,7 @@ class __TwigTemplate_892e749d561dbfbef8afc947b75b1102cd82ea6e529626a95f7cd876d28
                         <div class=\"avatar\">
                             <img src=\"";
         // line 92
-        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/avatar2.jpg");
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/default.jpg");
         echo "\" alt=\"\" />
                         </div>
 
@@ -246,7 +246,7 @@ class __TwigTemplate_892e749d561dbfbef8afc947b75b1102cd82ea6e529626a95f7cd876d28
                         <div class=\"avatar\">
                             <img src=\"";
             // line 143
-            echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/avatar2.jpg");
+            echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/default.jpg");
             echo "\" alt=\"\" />
                         </div>
 
@@ -449,7 +449,7 @@ class __TwigTemplate_892e749d561dbfbef8afc947b75b1102cd82ea6e529626a95f7cd876d28
 <div class=\"container\">
     <div class=\"row\">
         <div class=\"col-lg-8 breadcrumbf\">
-            <a href=\"{{ url('/') }}\">Главная</a> <span class=\"diviver\">&gt;</span>  <a href=\"#\">Детали темы</a>
+            <a href=\"{{ url('/') }}\">Главная</a> <span class=\"diviver\"><i class=\"fa fa-arrow-circle-right\"></i></span>  <a href=\"#\">Детали темы</a>
         </div>
     </div>
 </div>
@@ -470,7 +470,7 @@ class __TwigTemplate_892e749d561dbfbef8afc947b75b1102cd82ea6e529626a95f7cd876d28
                 <div class=\"topwrap\">
                     <div class=\"userinfo pull-left\">
                         <div class=\"avatar\">
-                            <img src=\"{{'assets/images/avatar2.jpg'|theme}}\" alt=\"\" />
+                            <img src=\"{{'assets/images/default.jpg'|theme}}\" alt=\"\" />
                         </div>
 
                         <div class=\"icons\">
@@ -521,7 +521,7 @@ class __TwigTemplate_892e749d561dbfbef8afc947b75b1102cd82ea6e529626a95f7cd876d28
                 <div class=\"topwrap\">
                     <div class=\"userinfo pull-left\">
                         <div class=\"avatar\">
-                            <img src=\"{{'assets/images/avatar2.jpg'|theme}}\" alt=\"\" />
+                            <img src=\"{{'assets/images/default.jpg'|theme}}\" alt=\"\" />
                         </div>
 
                         <div class=\"icons\">

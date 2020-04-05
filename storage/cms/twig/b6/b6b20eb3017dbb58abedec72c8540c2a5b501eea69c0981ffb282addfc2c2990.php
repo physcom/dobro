@@ -93,49 +93,52 @@ class __TwigTemplate_72a8a5c8378eca66b2d18b8332ac930146bf692abb515f8a6c0f17c5d5d
     <body>
             
       
-        <!-- Slider -->
-        <div class=\"tp-banner-container\">
-            <div class=\"tp-banner\" >
-                <!-- MAIN IMAGE -->
-                <a href=\"";
-        // line 47
-        echo url("/");
-        echo "\"><img src=\"";
-        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/slide.jpg");
-        echo "\"  alt=\"slidebg1\"  class=\"img-responsive\" style=\"width: 100%;\"></a>
-                <div class=\"centered\"><h1>Вместе Мы Сила</h1></div> 
-
-            </div>
-
+        <div class=\"mt-header-ed header-above\">
+              <div class=\"container\">
+              
+               <div class=\"row\">
+               
+                <div class=\"col-lg-6 col-xl-6 col-md-12 col-12\">            
+                
+                 #КүчБирдикте    
+                </div>
+                
+                     <div class=\"col-lg-6 col-xl-6 col-md-12 col-12\">
+              
+                  #СилаВЕдинстве  
+                 </div>                        
+                   </div>
+              
+              </div>
         </div>
         <!-- Header -->
         <header id=\"layout-header\">
             ";
-        // line 55
+        // line 63
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/header"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 56
+        // line 64
         echo "        </header>
 
 
         <!-- Content -->
         <div>
             ";
-        // line 61
+        // line 69
         echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
-        // line 62
+        // line 70
         echo "        </div>
 
 
          <!-- core JS -->
         <script src=\"";
-        // line 66
+        // line 74
         echo $this->extensions['Cms\Twig\Extension']->themeFilter([0 => "assets/js/jquery.js", 1 => "assets/js/bootstrap.min.js", 2 => "assets/sweetalert/sweetalert.min.js"]);
-        // line 71
+        // line 79
         echo "\"></script>
         ";
-        // line 72
+        // line 80
         $_minify = System\Classes\CombineAssets::instance()->useMinify;
         if ($_minify) {
             echo '<script src="' . Request::getBasePath() . '/modules/system/assets/js/framework.combined-min.js"></script>'.PHP_EOL;
@@ -146,11 +149,11 @@ class __TwigTemplate_72a8a5c8378eca66b2d18b8332ac930146bf692abb515f8a6c0f17c5d5d
         }
         echo '<link rel="stylesheet" property="stylesheet" href="' . Request::getBasePath() .'/modules/system/assets/css/framework.extras'.($_minify ? '-min' : '').'.css">'.PHP_EOL;
         unset($_minify);
-        // line 73
+        // line 81
         echo "        ";
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('js');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('scripts');
-        // line 74
+        // line 82
         echo "
         
 
@@ -172,7 +175,7 @@ class __TwigTemplate_72a8a5c8378eca66b2d18b8332ac930146bf692abb515f8a6c0f17c5d5d
 
     public function getDebugInfo()
     {
-        return array (  154 => 74,  150 => 73,  139 => 72,  136 => 71,  134 => 66,  128 => 62,  126 => 61,  119 => 56,  115 => 55,  102 => 47,  92 => 39,  89 => 38,  85 => 36,  83 => 30,  62 => 12,  58 => 11,  54 => 10,  50 => 9,  46 => 8,  37 => 1,);
+        return array (  157 => 82,  153 => 81,  142 => 80,  139 => 79,  137 => 74,  131 => 70,  129 => 69,  122 => 64,  118 => 63,  92 => 39,  89 => 38,  85 => 36,  83 => 30,  62 => 12,  58 => 11,  54 => 10,  50 => 9,  46 => 8,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -219,15 +222,23 @@ class __TwigTemplate_72a8a5c8378eca66b2d18b8332ac930146bf692abb515f8a6c0f17c5d5d
     <body>
             
       
-        <!-- Slider -->
-        <div class=\"tp-banner-container\">
-            <div class=\"tp-banner\" >
-                <!-- MAIN IMAGE -->
-                <a href=\"{{ url('/') }}\"><img src=\"{{'assets/images/slide.jpg'|theme}}\"  alt=\"slidebg1\"  class=\"img-responsive\" style=\"width: 100%;\"></a>
-                <div class=\"centered\"><h1>Вместе Мы Сила</h1></div> 
-
-            </div>
-
+        <div class=\"mt-header-ed header-above\">
+              <div class=\"container\">
+              
+               <div class=\"row\">
+               
+                <div class=\"col-lg-6 col-xl-6 col-md-12 col-12\">            
+                
+                 #КүчБирдикте    
+                </div>
+                
+                     <div class=\"col-lg-6 col-xl-6 col-md-12 col-12\">
+              
+                  #СилаВЕдинстве  
+                 </div>                        
+                   </div>
+              
+              </div>
         </div>
         <!-- Header -->
         <header id=\"layout-header\">

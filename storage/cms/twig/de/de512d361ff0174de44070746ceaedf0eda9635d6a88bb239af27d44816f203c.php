@@ -40,38 +40,18 @@ class __TwigTemplate_e28a68f077bda88cf6453a76c57641bf9fbc3ecdbab4ac5abaf3f74e89b
             <a href=\"";
         // line 4
         echo url("/");
-        echo "\">Главная</a> <span class=\"diviver\">&gt;</span>  <a href=\"#\">Новая тема</a>
+        echo "\">Главная</a> <span class=\"diviver\"><i class=\"fa fa-arrow-circle-right\"></i></span>  <a href=\"#\">Новая тема</a>
         </div>
     </div>
 </div>
 <div class=\"container\">
     <div class=\"row\">
         <div class=\"col-lg-8 col-md-8\">
-        \t";
-        $_type = isset($context["type"]) ? $context["type"] : null;        $_message = isset($context["message"]) ? $context["message"] : null;        // line 11
-        foreach (Flash::getMessages() as $type => $messages) {
-            foreach ($messages as $message) {
-                $context["type"] = $type;                $context["message"] = $message;                // line 12
-                echo "\t            <div class=\"mg_comment_message\" style=\"float: left;width: 100%;margin:0 0 30px; \">
-\t              <div class=\"alert alert-";
-                // line 13
-                echo twig_escape_filter($this->env, ($context["type"] ?? null), "html", null, true);
-                echo "\">
-\t                  <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>
-\t                  ";
-                // line 15
-                echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
-                echo "
-\t              </div>
-\t            </div> 
-\t         ";
-            }
-        }
-        $context["type"] = $_type;        $context["message"] = $_message;        // line 19
-        echo "        \t<!-- POST -->
+        \t
+        \t<!-- POST -->
             <div class=\"post\">
             \t ";
-        // line 21
+        // line 14
         echo call_user_func_array($this->env->getFunction('form_ajax')->getCallable(), ["ajax", "onSubmit", ["class" => "form newtopic"]]);
         echo "
                
@@ -88,17 +68,17 @@ class __TwigTemplate_e28a68f077bda88cf6453a76c57641bf9fbc3ecdbab4ac5abaf3f74e89b
                                     <select name=\"category_id\" id=\"category\"  class=\"form-control\" >
                                         <option value=\"\" disabled selected>Выберите город</option>
                                         ";
-        // line 35
+        // line 28
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["categories"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 36
+            // line 29
             echo "
                                         <option value=\"";
-            // line 37
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 37), "html", null, true);
+            // line 30
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 30), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "title", [], "any", false, false, false, 37), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "title", [], "any", false, false, false, 30), "html", null, true);
             echo "</option>
 
                                         ";
@@ -106,7 +86,7 @@ class __TwigTemplate_e28a68f077bda88cf6453a76c57641bf9fbc3ecdbab4ac5abaf3f74e89b
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 40
+        // line 33
         echo "                                       
                                     </select>
                                 </div>
@@ -126,7 +106,7 @@ class __TwigTemplate_e28a68f077bda88cf6453a76c57641bf9fbc3ecdbab4ac5abaf3f74e89b
                             </div>
 
                             <div>
-                                <input type=\"text\" name=\"phone\" placeholder=\"Введите свой номер телефона\" class=\"form-control\" />
+                                <input type=\"text\" name=\"phone\" placeholder=\"Введите свой номер телефона, 0888 00 00 00\" class=\"form-control\" />
                             </div>
                          
                         </div>
@@ -141,7 +121,7 @@ class __TwigTemplate_e28a68f077bda88cf6453a76c57641bf9fbc3ecdbab4ac5abaf3f74e89b
                         <div class=\"clearfix\"></div>
                     </div>
                 ";
-        // line 73
+        // line 66
         echo call_user_func_array($this->env->getFunction('form_close')->getCallable(), ["close"]);
         echo "
             </div><!-- POST -->
@@ -162,7 +142,7 @@ class __TwigTemplate_e28a68f077bda88cf6453a76c57641bf9fbc3ecdbab4ac5abaf3f74e89b
 
     public function getDebugInfo()
     {
-        return array (  145 => 73,  110 => 40,  99 => 37,  96 => 36,  92 => 35,  75 => 21,  71 => 19,  63 => 15,  58 => 13,  55 => 12,  52 => 11,  42 => 4,  37 => 1,);
+        return array (  125 => 66,  90 => 33,  79 => 30,  76 => 29,  72 => 28,  55 => 14,  42 => 4,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -170,21 +150,14 @@ class __TwigTemplate_e28a68f077bda88cf6453a76c57641bf9fbc3ecdbab4ac5abaf3f74e89b
         return new Source("<div class=\"container\">
     <div class=\"row\">
         <div class=\"col-lg-8 breadcrumbf\">
-            <a href=\"{{ url('/') }}\">Главная</a> <span class=\"diviver\">&gt;</span>  <a href=\"#\">Новая тема</a>
+            <a href=\"{{ url('/') }}\">Главная</a> <span class=\"diviver\"><i class=\"fa fa-arrow-circle-right\"></i></span>  <a href=\"#\">Новая тема</a>
         </div>
     </div>
 </div>
 <div class=\"container\">
     <div class=\"row\">
         <div class=\"col-lg-8 col-md-8\">
-        \t{% flash %}
-\t            <div class=\"mg_comment_message\" style=\"float: left;width: 100%;margin:0 0 30px; \">
-\t              <div class=\"alert alert-{{ type }}\">
-\t                  <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>
-\t                  {{ message }}
-\t              </div>
-\t            </div> 
-\t         {% endflash %}
+        \t
         \t<!-- POST -->
             <div class=\"post\">
             \t {{ form_ajax('onSubmit',{ class: 'form newtopic'}) }}
@@ -225,7 +198,7 @@ class __TwigTemplate_e28a68f077bda88cf6453a76c57641bf9fbc3ecdbab4ac5abaf3f74e89b
                             </div>
 
                             <div>
-                                <input type=\"text\" name=\"phone\" placeholder=\"Введите свой номер телефона\" class=\"form-control\" />
+                                <input type=\"text\" name=\"phone\" placeholder=\"Введите свой номер телефона, 0888 00 00 00\" class=\"form-control\" />
                             </div>
                          
                         </div>

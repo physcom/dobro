@@ -1,4 +1,4 @@
-1586029831a:1:{s:13:"new-topic.htm";a:9:{s:8:"fileName";s:13:"new-topic.htm";s:7:"content";s:5208:"title = "Create new topic"
+1586063336a:1:{s:13:"new-topic.htm";a:9:{s:8:"fileName";s:13:"new-topic.htm";s:7:"content";s:5000:"title = "Create new topic"
 url = "/new-topic"
 layout = "default"
 is_hidden = 0
@@ -44,31 +44,27 @@ is_hidden = 0
   			      $comm->phone = Input::get('phone');
   			      $comm->address = Input::get('address');	
               $comm->save();
-               
-               return Redirect::to('/');
+              
+               // Sets a successful message
+              Flash::success('Новая тема успешно создана!'); 
+              return Redirect::to('/');
               
            }
    }
    ?>
 ==
+
  <div class="container">
     <div class="row">
         <div class="col-lg-8 breadcrumbf">
-            <a href="{{ url('/') }}">Главная</a> <span class="diviver">&gt;</span>  <a href="#">Новая тема</a>
+            <a href="{{ url('/') }}">Главная</a> <span class="diviver"><i class="fa fa-arrow-circle-right"></i></span>  <a href="#">Новая тема</a>
         </div>
     </div>
 </div>
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-8">
-        	{% flash %}
-	            <div class="mg_comment_message" style="float: left;width: 100%;margin:0 0 30px; ">
-	              <div class="alert alert-{{ type }}">
-	                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-	                  {{ message }}
-	              </div>
-	            </div> 
-	         {% endflash %}
+        	
         	<!-- POST -->
             <div class="post">
             	 {{ form_ajax('onSubmit',{ class: 'form newtopic'}) }}
@@ -128,24 +124,17 @@ is_hidden = 0
         </div>
     </div>
 </div>	
-";s:5:"mtime";i:1586012428;s:6:"markup";s:3579:"<div class="container">
+";s:5:"mtime";i:1586062686;s:6:"markup";s:3243:"<div class="container">
     <div class="row">
         <div class="col-lg-8 breadcrumbf">
-            <a href="{{ url('/') }}">Главная</a> <span class="diviver">&gt;</span>  <a href="#">Новая тема</a>
+            <a href="{{ url('/') }}">Главная</a> <span class="diviver"><i class="fa fa-arrow-circle-right"></i></span>  <a href="#">Новая тема</a>
         </div>
     </div>
 </div>
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-8">
-        	{% flash %}
-	            <div class="mg_comment_message" style="float: left;width: 100%;margin:0 0 30px; ">
-	              <div class="alert alert-{{ type }}">
-	                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-	                  {{ message }}
-	              </div>
-	            </div> 
-	         {% endflash %}
+        	
         	<!-- POST -->
             <div class="post">
             	 {{ form_ajax('onSubmit',{ class: 'form newtopic'}) }}
@@ -204,7 +193,7 @@ is_hidden = 0
             </div><!-- POST -->
         </div>
     </div>
-</div>";s:4:"code";s:1532:"   use Elaman\Dobro\Models\Post;
+</div>";s:4:"code";s:1659:"   use Elaman\Dobro\Models\Post;
    use Elaman\Dobro\Models\PostCategory;
    
       function onStart(){
@@ -244,8 +233,10 @@ is_hidden = 0
   			      $comm->phone = Input::get('phone');
   			      $comm->address = Input::get('address');	
               $comm->save();
-               
-               return Redirect::to('/');
+              
+               // Sets a successful message
+              Flash::success('Новая тема успешно создана!'); 
+              return Redirect::to('/');
               
            }
    }
